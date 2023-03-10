@@ -1,0 +1,55 @@
+.morePopup {
+	position: relative;
+	bottom: 1rem;
+	right: 10px;
+	width: 125%;
+	background-color: #252525;
+	border-radius: 8px;
+	z-index: 500;
+	animation: show 500ms ease-in-out;
+
+	.wrapper {
+		ul {
+			display: flex;
+			flex-direction: column;
+
+			li {
+				display: flex;
+				justify-content: space-between;
+				padding: 11px 15px;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #181818;
+
+					&:last-child {
+						border-bottom-right-radius: 8px;
+						border-bottom-left-radius: 8px;
+					}
+
+					&:first-child {
+						border-top-right-radius: 8px;
+						border-top-left-radius: 8px;
+					}
+				}
+			}
+		}
+
+		span {
+			font-size: 1.6rem;
+		}
+
+		svg {
+			font-size: 23px;
+		}
+	}
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
