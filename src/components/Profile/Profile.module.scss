@@ -1,0 +1,16 @@
+.profile {
+	padding-top: 40px;
+	width: 600px;
+	.headerProfile {
+		display: flex;
+		align-items: center;
+		gap: 120px;
+
+		.userAvatar img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+}

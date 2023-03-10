@@ -23,15 +23,6 @@ const NavigationItem = ({
 
 	return (
 		<li className={styles.navigationItem}>
-			{/* <NavLink
-				to={to}
-				className={`${styles.link} ${className} `}
-				style={setActive}
-				end
-			>
-				{Icon && <Icon className={styles.navIcon} />}
-				<span className={styles.title}>{title}</span>
-			</NavLink> */}
 			<NavLink to={to} className={styles.link} style={setActive} end>
 				{Icon && <Icon className={styles.navIcon} />}
 				{src && <img src={src} className={styles.navIcon} />}
