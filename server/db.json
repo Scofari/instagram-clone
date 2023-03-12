@@ -1,0 +1,49 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg",
+            "username": "Elon Musk",
+            "comment": "Some people don't like change, but you need to embrace change if the alternative is disaster.",
+            "likes": "296,594",
+            "dateTime": "2023-01-23",
+            "title": "Jan 23, 2023"
+        },
+        {
+            "id": 2,
+            "avatar": "https://ted-conferences-speaker-photos-production.s3.amazonaws.com/yoa4pm3vyerco6hqbhjxly3bf41d",
+            "username": "Bill Gates",
+            "comment": "Patience is a key element of success.",
+            "likes": "628,953",
+            "dateTime": "2023-01-21",
+            "title": "Jan 21, 2023"
+        },
+        {
+            "id": 3,
+            "avatar": "https://cdnn1.img.armeniasputnik.am/img/1506/51/15065139_150:0:1044:984_1920x0_80_0_0_e01039280098cd91b89d2b71d41999e6.jpg",
+            "username": "Dwayne Johnson",
+            "comment": "I like to use the hard times in the past to motivate me today.",
+            "likes": "772,847",
+            "dateTime": "2023-01-20",
+            "title": "Jan 20, 2023"
+        },
+        {
+            "id": 4,
+            "avatar": "https://media.vogue.co.uk/photos/61dda2e71bb9b719caedae94/2:3/w_2560%2Cc_limit/ew%2520x%2520macksfilm%2520british%2520vogue.jpg",
+            "username": "Emma Watson",
+            "comment": "Feeling beautiful has nothing to do with what you look like, I promise.",
+            "likes": "156,252",
+            "dateTime": "2023-01-29",
+            "title": "Jan 29, 2023"
+        },
+        {
+            "id": 5,
+            "avatar": "https://i.insider.com/60661e04902281001950aa7e?width=700",
+            "username": "Scarlett Johansson",
+            "comment": "I’m happiest when I have something to focus my energy on.",
+            "likes": "227,536",
+            "dateTime": "2023-01-27",
+            "title": "Jan 27, 2023"
+        }
+    ]
+}

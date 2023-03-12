@@ -1,16 +1,83 @@
 .profile {
-	padding-top: 40px;
-	width: 600px;
-	.headerProfile {
-		display: flex;
-		align-items: center;
-		gap: 120px;
+    padding-top: 40px;
+    width: 600px;
 
-		.userAvatar img {
-			width: 150px;
-			height: 150px;
-			border-radius: 50%;
-			object-fit: cover;
-		}
-	}
+    .headerProfile {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        margin-bottom: 60px;
+
+        .userAvatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .infoProfile {
+            width: 100%;
+
+            .editProfile {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+
+                h2 {
+                    font-weight: normal;
+                }
+
+                svg {
+                    cursor: pointer;
+                    font-size: 35px;
+                }
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+
+                li {
+                    cursor: pointer;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .description {
+                display: flex;
+                flex-direction: column;
+
+                > span {
+                    font-weight: bold;
+                }
+
+                h1 {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                a {
+                    font-weight: bold;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .highlightList {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }

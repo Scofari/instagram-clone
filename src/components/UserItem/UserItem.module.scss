@@ -1,46 +1,46 @@
 .user {
-	display: flex;
-	justify-content: space-between;
-	padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
 
-	.userInfo {
-		display: flex;
-		align-items: center;
-		gap: 15px;
+    .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
 
-		img {
-			height: 30px;
-			width: 30px;
-			border-radius: 50%;
-			object-fit: cover;
-			cursor: pointer;
-		}
+        img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
 
-		> div {
-			display: flex;
-			flex-direction: column;
+        > div {
+            display: flex;
+            flex-direction: column;
 
-			a {
-				text-decoration: none;
-				font-weight: bold;
-				font-size: 1.6rem;
-			}
+            a {
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+            }
 
-			span {
-				font-size: 14px;
-				opacity: 0.7;
-			}
-		}
-	}
+            span {
+                font-size: 13px;
+                color: #a3a3a3;
+            }
+        }
+    }
 
-	button {
-		background: transparent;
-		color: #1899f2;
-		font-size: 12px;
-		cursor: pointer;
+    button {
+        background: transparent;
+        color: #1899f2;
+        font-size: 12px;
+        cursor: pointer;
 
-		&:hover {
-			color: #f5f5f5;
-		}
-	}
+        &:hover {
+            color: #f5f5f5;
+        }
+    }
 }

@@ -5,20 +5,20 @@ import UserList from "../UserList/UserList";
 import styles from "./Home.module.scss";
 
 interface HomeProps {
-	children?: ReactNode;
+    children?: ReactNode;
 }
 
 const Home = ({ children }: HomeProps) => {
-	return (
-		<div className={styles.home}>
-			<div>
-				<Posts />
-				<UserList />
+    return (
+        <div className={styles.home}>
+            <div>
+                <Posts />
+                <UserList />
 
-				{/* <section>{children}</section> */}
-			</div>
-		</div>
-	);
+                {/* <section>{children}</section> */}
+            </div>
+        </div>
+    );
 };
 
 export default Home;

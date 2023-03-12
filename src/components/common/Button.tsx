@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
-	text: string;
+    text: string;
 }
 
 const Button = ({ text }: ButtonProps) => {
-	return <button className={styles.button}>{text}</button>;
+    return <button className={styles.button}>{text}</button>;
 };
 
 export default Button;

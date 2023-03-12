@@ -1,25 +1,26 @@
 .footerList {
-	margin: 2rem 0;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-	a {
-		opacity: 0.4;
-		text-decoration: none;
-		font-size: 12px;
-		&::after {
-			content: "\00B7";
-			margin: 0 0.4rem;
-		}
+    a {
+        color: #666666;
+        text-decoration: none;
+        font-size: 12px;
+        &::after {
+            content: "\00B7";
+            margin: 0 0.4rem;
+            color: #666666;
+        }
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .copyright {
-	opacity: 0.4;
-	font-size: 12px;
+    color: #666666;
+    font-size: 12px;
 }
