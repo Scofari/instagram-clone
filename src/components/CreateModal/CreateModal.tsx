@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../common";
+import Button from "../UI";
 import styles from "./CreateModal.module.scss";
 import iconPhotoVideo from "../../assets/iconPhotoVideo.svg";
 
