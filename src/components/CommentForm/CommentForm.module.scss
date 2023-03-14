@@ -1,0 +1,28 @@
+.form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+	input {
+		border: transparent;
+		background: transparent;
+		outline: none;
+		width: 100%;
+		padding-right: 2rem;
+		font-size: 14px;
+
+		&::placeholder {
+			color: #9a9a9a;
+		}
+	}
+
+	svg {
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

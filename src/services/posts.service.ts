@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IPost } from "../@types/posts";
+import { IPost } from "../@types/post.interface";
 
 export const PostService = {
 	async getAll() {
@@ -10,12 +10,10 @@ export const PostService = {
 		return data;
 	},
 	async getByUsername(username: string) {
-		if (username) {
-			const { data } = await axios.get<IPost[]>(
-				`http://localhost:3000/posts?username=${username}`
-			);
+		const { data } = await axios.get<IPost[]>(
+			`http://localhost:3000/posts?username=${username}`
+		);
 
-			return data[0];
-		}
+		return data[0];
 	},
 };

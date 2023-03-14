@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
-    text: string;
+	text: string;
+	btnLight: string;
 }
 
-const Button = ({ text }: ButtonProps) => {
-    return <button className={styles.button}>{text}</button>;
+const Button = ({ text, btnLight }: ButtonProps) => {
+	return <button className={`${styles.button} ${btnLight}`}>{text}</button>;
 };
 
 export default Button;

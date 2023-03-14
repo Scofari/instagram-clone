@@ -7,7 +7,12 @@
 			"comment": "Some people don't like change, but you need to embrace change if the alternative is disaster.",
 			"likes": "296,594",
 			"dateTime": "2023-01-23",
-			"title": "Jan 23, 2023"
+			"title": "Jan 23, 2023",
+			"followers": [
+				{ "quantity": 2, "text": "posts" },
+				{ "quantity": 3, "text": "followers" },
+				{ "quantity": 4, "text": "following" }
+			]
 		},
 		{
 			"id": 2,
@@ -16,7 +21,12 @@
 			"comment": "Patience is a key element of success.",
 			"likes": "628,953",
 			"dateTime": "2023-01-21",
-			"title": "Jan 21, 2023"
+			"title": "Jan 21, 2023",
+			"followers": [
+				{ "quantity": 25, "text": "posts" },
+				{ "quantity": 32, "text": "followers" },
+				{ "quantity": 48, "text": "following" }
+			]
 		},
 		{
 			"id": 3,
@@ -25,7 +35,12 @@
 			"comment": "I like to use the hard times in the past to motivate me today.",
 			"likes": "772,847",
 			"dateTime": "2023-01-20",
-			"title": "Jan 20, 2023"
+			"title": "Jan 20, 2023",
+			"followers": [
+				{ "quantity": 32, "text": "posts" },
+				{ "quantity": 83, "text": "followers" },
+				{ "quantity": 43, "text": "following" }
+			]
 		},
 		{
 			"id": 4,
@@ -34,7 +49,12 @@
 			"comment": "Feeling beautiful has nothing to do with what you look like, I promise.",
 			"likes": "156,252",
 			"dateTime": "2023-01-29",
-			"title": "Jan 29, 2023"
+			"title": "Jan 29, 2023",
+			"followers": [
+				{ "quantity": 22, "text": "posts" },
+				{ "quantity": 83, "text": "followers" },
+				{ "quantity": 44, "text": "following" }
+			]
 		},
 		{
 			"id": 5,
@@ -43,7 +63,12 @@
 			"comment": "I’m happiest when I have something to focus my energy on.",
 			"likes": "227,536",
 			"dateTime": "2023-01-27",
-			"title": "Jan 27, 2023"
+			"title": "Jan 27, 2023",
+			"followers": [
+				{ "quantity": 12, "text": "posts" },
+				{ "quantity": 38, "text": "followers" },
+				{ "quantity": 49, "text": "following" }
+			]
 		},
 		{
 			"id": 6,
@@ -52,7 +77,12 @@
 			"comment": "Less is more",
 			"likes": "156,594",
 			"dateTime": "2023-03-13",
-			"title": "Mar 13, 2023"
+			"title": "Mar 13, 2023",
+			"followers": [
+				{ "quantity": 92, "text": "posts" },
+				{ "quantity": 443, "text": "followers" },
+				{ "quantity": 419, "text": "following" }
+			]
 		}
 	]
 }

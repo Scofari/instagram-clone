@@ -1,0 +1,82 @@
+.headerProfile {
+	display: flex;
+	align-items: center;
+	gap: 100px;
+	margin-bottom: 60px;
+
+	.userAvatar img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	.infoProfile {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		.editProfile {
+			display: flex;
+			align-items: center;
+			gap: 25px;
+
+			.btn {
+				background: #f5f5f5;
+				color: black;
+				padding: 8px 20px;
+
+				&:hover {
+					background: #dedede;
+				}
+			}
+
+			h2 {
+				font-weight: normal;
+			}
+
+			svg {
+				cursor: pointer;
+				font-size: 30px;
+			}
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+
+			li {
+				cursor: pointer;
+
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+
+		.description {
+			display: flex;
+			flex-direction: column;
+
+			> span {
+				font-weight: bold;
+			}
+
+			h1 {
+				font-size: 14px;
+				font-weight: normal;
+			}
+
+			a {
+				font-weight: bold;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

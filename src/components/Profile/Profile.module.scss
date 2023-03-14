@@ -1,83 +1,26 @@
 .profile {
-    padding-top: 40px;
-    width: 600px;
+	padding-top: 40px;
+	width: 950px;
+	min-height: 100vh;
 
-    .headerProfile {
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        margin-bottom: 60px;
+	.navigation {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 50px;
 
-        .userAvatar img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            cursor: pointer;
-        }
+		.navProfile {
+			color: #a3a3a3;
+			letter-spacing: 1px;
+			// font-weight: 500;
+			font-size: 12px;
+			margin-right: 5px;
+		}
+	}
 
-        .infoProfile {
-            width: 100%;
-
-            .editProfile {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 25px;
-
-                h2 {
-                    font-weight: normal;
-                }
-
-                svg {
-                    cursor: pointer;
-                    font-size: 35px;
-                }
-            }
-
-            ul {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 25px;
-
-                li {
-                    cursor: pointer;
-
-                    span {
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            .description {
-                display: flex;
-                flex-direction: column;
-
-                > span {
-                    font-weight: bold;
-                }
-
-                h1 {
-                    font-size: 14px;
-                    font-weight: normal;
-                }
-
-                a {
-                    font-weight: bold;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
-
-    .highlightList {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+	.highlightList {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
 }

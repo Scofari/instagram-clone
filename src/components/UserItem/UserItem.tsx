@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import styles from "./UserItem.module.scss";
 
 interface UserItemProps {
-	name: string;
+	username: string;
 	description: string;
 	action: string;
-	img: string;
+	avatar: string;
 	setIsFollowing?: () => void;
 	to: string;
 	style?: React.CSSProperties;
 }
 
 const UserItem = ({
-	name,
+	username,
 	description,
 	action,
-	img,
+	avatar,
 	style,
 	setIsFollowing,
 	to = "",
@@ -25,9 +25,9 @@ const UserItem = ({
 		<div className={styles.user}>
 			<Link to={to}>
 				<div className={styles.userInfo}>
-					<img src={img} alt="avatar" style={style} />
+					<img src={avatar} alt="avatar" style={style} />
 					<div>
-						<p>{name}</p>
+						<p>{username}</p>
 						<span>{description}</span>
 					</div>
 				</div>

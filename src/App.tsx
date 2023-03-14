@@ -7,6 +7,8 @@ import Reels from "./components/Reels";
 import Explore from "./components/Explore/index";
 import Profile from "./components/Profile/Profile";
 import styles from "./App.module.scss";
+import Search from "./components/Search";
+import Notifications from "./components/Notifications";
 
 function App() {
 	return (
@@ -15,6 +17,8 @@ function App() {
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path="/direct/inbox" element={<Messages />} />
+					<Route path="/search" element={<Search />} />
+					<Route path="/notifications" element={<Notifications />} />
 					<Route path="/explore" element={<Explore />} />
 					<Route path="/reels" element={<Reels />} />
 					<Route path="/:username" element={<Profile />} />

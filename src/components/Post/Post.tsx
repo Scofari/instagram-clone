@@ -1,43 +1,24 @@
 import React from "react";
-import {
-	BsThreeDots,
-	BsHeart,
-	BsChat,
-	BsBookmark,
-	BsEmojiSmile,
-} from "react-icons/bs";
+import { BsHeart, BsChat, BsBookmark } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { IPost } from "../../@types/posts";
+import { IPost } from "../../@types/post.interface";
+import CommentForm from "../CommentForm";
+import HeaderPost from "./../HeaderPost";
 
 import styles from "./Post.module.scss";
 
-const Post = ({
-	id,
-	username,
-	avatar,
-	comment,
-	likes,
-	dateTime,
-	title,
-}: IPost) => {
+interface PostProps {
+	post: IPost;
+}
+
+const Post = ({ post }: PostProps) => {
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.post}>
-				<img src={avatar} alt="avatar" />
-				<Link to={`/${username}`}>{username}</Link>
-				<div className={styles.time}>
-					<time dateTime={dateTime} title={title}>
-						{dateTime}
-					</time>
-				</div>
-				<BsThreeDots />
-			</div>
-
+			<HeaderPost {...post} />
 			<div className={styles.cover}>
-				<img src={avatar} alt="cover" />
+				<img src={post.avatar} alt="cover" />
 			</div>
-
 			<div className={styles.actions}>
 				<BsHeart />
 				<BsChat />
@@ -45,17 +26,16 @@ const Post = ({
 				<BsBookmark />
 			</div>
 
-			<span>{likes} likes</span>
+			<span>{post.likes} likes</span>
 
 			<p>
-				<span>{username}</span>
-				{comment}
+				<span>
+					<Link to={`/${post.username}`}>{post.username}</Link>
+				</span>
+				{post.comment}
 			</p>
 
-			<form>
-				<input type="text" placeholder="Add a comment..." />
-				<BsEmojiSmile />
-			</form>
+			<CommentForm />
 		</div>
 	);
 };

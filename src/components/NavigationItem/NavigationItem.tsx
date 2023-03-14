@@ -9,6 +9,7 @@ interface NavigationItemProps {
 	to?: string;
 	icon?: IconType;
 	src?: string;
+	navProfile?: string;
 }
 
 const NavigationItem = ({
@@ -16,11 +17,12 @@ const NavigationItem = ({
 	to = "",
 	icon,
 	src = "",
+	navProfile = "",
 }: NavigationItemProps) => {
 	const Icon = icon;
 
 	return (
-		<li>
+		<li className={styles.item}>
 			<NavLink
 				to={to}
 				className={styles.link}
@@ -29,9 +31,9 @@ const NavigationItem = ({
 				})}
 				end
 			>
-				{Icon && <Icon className={styles.navIcon} />}
+				{Icon && <Icon className={`${styles.navIcon} ${navProfile}`} />}
 				{src && <img src={src} className={styles.navIcon} />}
-				<span className={styles.title}>{title}</span>
+				<span className={`${styles.title} ${navProfile}`}>{title}</span>
 			</NavLink>
 		</li>
 	);
