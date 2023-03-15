@@ -12,7 +12,7 @@ const Search = () => {
 			{toggleSearch && (
 				<div className={styles.wrapper}>
 					<h2>Search</h2>
-					<SearchInput />
+					<SearchInput placeholder="Search" />
 					<div className={styles.searchContentBlock}>
 						<div className={styles.searchContent}>
 							<h4>Recent</h4>

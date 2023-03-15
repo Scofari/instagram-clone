@@ -1,63 +1,20 @@
-.overlay {
+.modalContent {
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.7);
-	z-index: 500;
-	animation: show 200ms ease-in-out;
+	text-align: center;
+	display: flex;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	z-index: 300;
+	animation: show 800ms ease-in-out;
 
-	.close {
-		font-size: 40px;
-		position: absolute;
-		right: 30px;
-		top: 0;
-		cursor: pointer;
-	}
-
-	.modal {
-		width: 500px;
-		height: 560px;
-		background-color: rgb(38, 38, 38);
-		border-radius: 10px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		z-index: 200;
-		animation: show 400ms ease-in-out;
-
-		span {
-			display: block;
-			padding: 10px 0;
-			font-weight: bold;
-			letter-spacing: 0.5px;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		}
-
-		.modalContent {
-			position: absolute;
-			text-align: center;
-			display: flex;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			gap: 20px;
-			z-index: 300;
-			animation: show 800ms ease-in-out;
-
-			p {
-				width: 300px;
-				font-size: 20px;
-			}
-		}
+	p {
+		width: 300px;
+		font-size: 20px;
 	}
 }
 

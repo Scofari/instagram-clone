@@ -6,12 +6,12 @@ import {
 } from "react-icons/all";
 import Highlight from "../Highlight";
 
-import HeaderProfile from "../HeaderProfile";
+import HeaderProfile from "../ProfileHeader";
 import ProfileContent from "./../ProfileContent/index";
 import NavigationItem from "../NavigationItem";
 import styles from "./Profile.module.scss";
 
-const navigation = [
+const navigationProfile = [
 	{ icon: AiOutlineTable, title: "POSTS" },
 	{ icon: BsBookmark, title: "SAVED" },
 	{ icon: CgProfile, title: "TAGGED" },
@@ -24,10 +24,9 @@ const Profile = () => {
 
 			<div className={styles.highlightList}>
 				<Highlight icon={IoAddSharp} text="New" />
-				<Highlight icon={IoAddSharp} text="New" />
 			</div>
 			<div className={styles.navigation}>
-				{navigation.map((item) => (
+				{navigationProfile.map((item) => (
 					<NavigationItem navProfile={styles.navProfile} {...item} />
 				))}
 			</div>

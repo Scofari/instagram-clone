@@ -1,0 +1,51 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 500;
+	animation: show 200ms ease-in-out;
+	overflow: hidden;
+
+	.close {
+		font-size: 40px;
+		position: absolute;
+		right: 30px;
+		top: 0;
+		cursor: pointer;
+	}
+
+	.modal {
+		background-color: rgb(38, 38, 38);
+		border-radius: 10px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		z-index: 200;
+		animation: show 400ms ease-in-out;
+
+		> h1 {
+			display: block;
+			font-size: 15px;
+			padding: 10px 0;
+			font-weight: bold;
+			letter-spacing: 0.5px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

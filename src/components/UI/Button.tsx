@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
 	text: string;
-	btnLight: string;
+	btnLight?: string;
 }
 
 const Button = ({ text, btnLight }: ButtonProps) => {

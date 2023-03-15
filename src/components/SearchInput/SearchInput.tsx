@@ -3,24 +3,39 @@ import { RiSearchLine } from "react-icons/ri";
 
 import styles from "./SearchInput.module.scss";
 
-const SearchInput = () => {
+interface SearchInputProps {
+	placeholder: string;
+	bgDark?: React.CSSProperties;
+}
+
+const SearchInput = ({ placeholder, bgDark }: SearchInputProps) => {
 	const [searchValue, setSearchValue] = useState("");
 
 	return (
 		<div className={styles.searchInput}>
 			<div className={styles.wrapper}>
-				{!searchValue && <RiSearchLine />}
+				{placeholder === "Search" && !searchValue && <RiSearchLine />}
 
 				<input
 					type="text"
 					value={searchValue}
-					placeholder="Search"
+					placeholder={placeholder}
+					style={bgDark}
 					onChange={(e) => setSearchValue(e.target.value)}
 				/>
-				{searchValue && (
-					<span onClick={() => setSearchValue("")}>&#10006;</span>
-				)}
+
+				{!bgDark
+					? searchValue && (
+							<span onClick={() => setSearchValue("")}>
+								&#10006;
+							</span>
+					  )
+					: null}
 			</div>
+
+			{!!bgDark && (
+				<button disabled={searchValue ? false : true}>Next</button>
+			)}
 		</div>
 	);
 };

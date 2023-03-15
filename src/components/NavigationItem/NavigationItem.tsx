@@ -2,8 +2,6 @@ import { IconType } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
 import styles from "./NavigationItem.module.scss";
 
-// const setActive =
-
 interface NavigationItemProps {
 	title: string;
 	to?: string;
@@ -15,12 +13,10 @@ interface NavigationItemProps {
 const NavigationItem = ({
 	title = "",
 	to = "",
-	icon,
+	icon: Icon,
 	src = "",
 	navProfile = "",
 }: NavigationItemProps) => {
-	const Icon = icon;
-
 	return (
 		<li className={styles.item}>
 			<NavLink

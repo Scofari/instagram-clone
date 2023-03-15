@@ -1,11 +1,11 @@
-import Button from "./../UI/index";
+import Button from "../UI/index";
 import { IoIosSettings } from "react-icons/io";
 import { PostService } from "../../services/posts.service";
 import { useQuery } from "@tanstack/react-query";
-import styles from "./HeaderProfile.module.scss";
 import { useParams } from "react-router-dom";
+import styles from "./ProfileHeader.module.scss";
 
-const HeaderProfile = () => {
+const ProfileHeader = () => {
 	const { username = "" } = useParams();
 	const { data } = useQuery(["posts"], () =>
 		PostService.getByUsername(username)
@@ -14,7 +14,7 @@ const HeaderProfile = () => {
 	if (!data?.username) return <p>Loading...</p>;
 
 	return (
-		<header className={styles.headerProfile}>
+		<header className={styles.profileHeader}>
 			<div className={styles.userAvatar}>
 				<img src={data.avatar} alt="avatar" />
 			</div>
@@ -47,4 +47,4 @@ const HeaderProfile = () => {
 	);
 };
 
-export default HeaderProfile;
+export default ProfileHeader;
