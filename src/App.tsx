@@ -10,6 +10,7 @@ import styles from "./App.module.scss";
 import Search from "./components/Search";
 import Notifications from "./components/Notifications";
 import Create from "./components/Create";
+import ModalContext from "./providers/ModalContext";
 
 function App() {
 	return (
@@ -22,8 +23,8 @@ function App() {
 					<Route path="/notifications" element={<Notifications />} />
 					<Route path="/explore" element={<Explore />} />
 					<Route path="/reels" element={<Reels />} />
-					<Route path="/create" element={<Create />} />
 					<Route path="/:username" element={<Profile />} />
+					<Route path="/create" element={<Create />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>

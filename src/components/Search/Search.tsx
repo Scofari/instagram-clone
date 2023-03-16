@@ -1,11 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 import NavigationItem from "../NavigationItem";
 import SearchInput from "../SearchInput";
 import styles from "./Search.module.scss";
 
 const Search = () => {
-	const [toggleSearch, setToggleSearch] = React.useState(false);
+	const [toggleSearch, setToggleSearch] = useState(false);
 
 	return (
 		<div className={`${styles.search} ${styles.hide}`}>

@@ -17,8 +17,8 @@ const posts = [
 const ProfileContent = () => {
 	return (
 		<div className={styles.content}>
-			{posts.map((post) => (
-				<ProfilePost src={post.img} />
+			{posts.map((post, idx) => (
+				<ProfilePost key={idx} src={post.img} />
 			))}
 		</div>
 	);

@@ -1,37 +1,37 @@
+import ReactDOM from "react-dom";
 import React, { ReactNode } from "react";
 import styles from "./Modal.module.scss";
-import ReactDOM from "react-dom";
 
 interface ModalProps {
-	open: boolean;
-	onClose: () => void;
 	children: ReactNode;
 	style: React.CSSProperties;
+	setOpenModal: (x: boolean) => void;
 	title?: string;
 	highlight?: boolean;
 }
 
 const Modal = ({
 	children,
-	open,
-	onClose,
 	title,
 	style,
 	highlight,
+	setOpenModal,
 }: ModalProps) => {
-	if (!open) return null;
+	console.log("open: ", open);
 
 	return ReactDOM.createPortal(
 		<div className={styles.overlay}>
-			{!highlight && <span className={styles.close}>&times;</span>}
 			<div className={styles.modal} style={style}>
-				{!highlight ? (
-					<>
-						<h1>{title}</h1> {children}
-					</>
-				) : (
-					<>{children}</>
-				)}
+				<div className={styles.title}>
+					<h1>{title}</h1>
+					<span
+						className={styles.close}
+						onClick={() => setOpenModal(false)}
+					>
+						&times;
+					</span>
+				</div>
+				{children}
 			</div>
 		</div>,
 		document.getElementById("portal") as HTMLElement

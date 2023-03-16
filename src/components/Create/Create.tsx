@@ -6,12 +6,15 @@ import styles from "./Create.module.scss";
 
 const Create = () => {
 	const [openModal, setOpenModal] = useState(false);
+	console.log("openModal: ", openModal);
 
 	return (
-		<div onClick={() => setOpenModal((prev) => !prev)}>
-			{openModal && <CreateModal />}
-			<NavigationItem icon={RiAddBoxLine} title="Create" />
-		</div>
+		<>
+			<div onClick={() => setOpenModal(true)}>
+				<NavigationItem icon={RiAddBoxLine} title="Create" />
+			</div>
+			{openModal && <CreateModal setOpenModal={setOpenModal} />}
+		</>
 	);
 };
 

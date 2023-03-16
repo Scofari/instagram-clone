@@ -7,8 +7,8 @@ interface UserItemProps {
 	description: string;
 	action: string;
 	avatar: string;
-	setIsFollowing?: () => void;
 	to: string;
+	setIsFollowing?: () => void;
 	style?: React.CSSProperties;
 }
 

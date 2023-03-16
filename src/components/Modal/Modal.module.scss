@@ -11,14 +11,6 @@
 	animation: show 200ms ease-in-out;
 	overflow: hidden;
 
-	.close {
-		font-size: 40px;
-		position: absolute;
-		right: 30px;
-		top: 0;
-		cursor: pointer;
-	}
-
 	.modal {
 		background-color: rgb(38, 38, 38);
 		border-radius: 10px;
@@ -30,13 +22,27 @@
 		z-index: 200;
 		animation: show 400ms ease-in-out;
 
-		> h1 {
-			display: block;
-			font-size: 15px;
-			padding: 10px 0;
-			font-weight: bold;
-			letter-spacing: 0.5px;
+		.title {
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			position: relative;
+
+			h1 {
+				font-size: 16px;
+				font-weight: 500;
+			}
+
+			.close {
+				position: absolute;
+				right: 10px;
+				bottom: 0px;
+				font-size: 35px;
+				cursor: pointer;
+			}
 		}
 	}
 }

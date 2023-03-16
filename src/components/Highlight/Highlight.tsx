@@ -11,6 +11,7 @@ interface HighlightProps {
 
 const Highlight = ({ icon: Icon, style, text }: HighlightProps) => {
 	const [openModal, setOpenModal] = useState(false);
+	console.log("openModal: ", openModal);
 
 	return (
 		<>

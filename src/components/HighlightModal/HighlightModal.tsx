@@ -14,25 +14,13 @@ const bgDarkStyles = {
 };
 
 const HighlightModal = ({ setOpenModal }: HighlightModalProps) => {
-	const onClose = () => {};
-
 	return (
 		<Modal
+			setOpenModal={setOpenModal}
 			highlight
-			open
 			title="New Highlight"
-			onClose={onClose}
 			style={{ width: "400px", height: "180px" }}
 		>
-			<div className={styles.title}>
-				<h1>New Highlight</h1>
-				<span
-					className={styles.close}
-					onClick={() => setOpenModal(false)}
-				>
-					&times;
-				</span>
-			</div>
 			<div className={styles.modalContent}>
 				<SearchInput
 					placeholder="Highlight name"

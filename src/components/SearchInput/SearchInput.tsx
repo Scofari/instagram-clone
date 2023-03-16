@@ -33,9 +33,7 @@ const SearchInput = ({ placeholder, bgDark }: SearchInputProps) => {
 					: null}
 			</div>
 
-			{!!bgDark && (
-				<button disabled={searchValue ? false : true}>Next</button>
-			)}
+			{!!bgDark && <button disabled={!searchValue && true}>Next</button>}
 		</div>
 	);
 };
