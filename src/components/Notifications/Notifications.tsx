@@ -1,9 +1,7 @@
 import React from "react";
 
-type Props = {};
-
-const Notifications = (props: Props) => {
-	return <div>Notifications</div>;
+const Notifications = () => {
+	return <h1>Notifications</h1>;
 };
 
 export default Notifications;

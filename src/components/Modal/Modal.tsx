@@ -10,18 +10,14 @@ interface ModalProps {
 	highlight?: boolean;
 }
 
-const Modal = ({
-	children,
-	title,
-	style,
-	highlight,
-	setOpenModal,
-}: ModalProps) => {
-	console.log("open: ", open);
-
+const Modal = ({ children, title, style, setOpenModal }: ModalProps) => {
 	return ReactDOM.createPortal(
-		<div className={styles.overlay}>
-			<div className={styles.modal} style={style}>
+		<div className={styles.overlay} onClick={() => setOpenModal(false)}>
+			<div
+				className={styles.modal}
+				style={style}
+				onClick={(e) => e.stopPropagation()}
+			>
 				<div className={styles.title}>
 					<h1>{title}</h1>
 					<span
