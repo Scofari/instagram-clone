@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { RiAddBoxLine } from "react-icons/ri";
 import NavigationItem from "../NavigationItem/index";
 import CreateModal from "./../CreateModal";
-import styles from "./Create.module.scss";
 
-const Create = () => {
+const Create: FC = () => {
 	const [openModal, setOpenModal] = useState(false);
-	console.log("openModal: ", openModal);
 
 	return (
 		<>

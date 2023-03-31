@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IconType } from "react-icons/lib";
 import HighlightModal from "../HighlightModal";
+import Tooltip from "../UI/Tooltip";
 import styles from "./Highlight.module.scss";
 
 interface HighlightProps {
@@ -11,19 +12,20 @@ interface HighlightProps {
 
 const Highlight = ({ icon: Icon, style, text }: HighlightProps) => {
 	const [openModal, setOpenModal] = useState(false);
-	console.log("openModal: ", openModal);
 
 	return (
 		<>
-			<div
-				className={styles.highlight}
-				onClick={() => setOpenModal(true)}
-			>
-				<div className={styles.circle}>
-					<Icon style={style} />
+			<Tooltip content="Plus icon">
+				<div
+					className={styles.highlight}
+					onClick={() => setOpenModal(true)}
+				>
+					<div className={styles.circle}>
+						<Icon style={style} />
+					</div>
+					<span>{text}</span>
 				</div>
-				<span>{text}</span>
-			</div>
+			</Tooltip>
 			{openModal && <HighlightModal setOpenModal={setOpenModal} />}
 		</>
 	);

@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import ProfilePost from "../ProfilePost";
 import styles from "./ProfileContent.module.scss";
 
@@ -14,7 +14,7 @@ const posts = [
 	},
 ];
 
-const ProfileContent = () => {
+const ProfileContent: FC = () => {
 	return (
 		<div className={styles.content}>
 			{posts.map((post, idx) => (

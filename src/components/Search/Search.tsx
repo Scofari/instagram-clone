@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { RiSearchLine } from "react-icons/ri";
 import NavigationItem from "../NavigationItem";
 import SearchInput from "../SearchInput";
 import styles from "./Search.module.scss";
 
-const Search = () => {
+const Search: FC = () => {
 	const [toggleSearch, setToggleSearch] = useState(false);
 
 	return (

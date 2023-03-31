@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.scss";
 
-const NotFound = () => {
+const NotFound: FC = () => {
 	return (
 		<div className={styles.notFound}>
 			<h2>Sorry, this page isn't available.</h2>

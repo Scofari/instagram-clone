@@ -1,10 +1,11 @@
+import { FC } from "react";
 import { BsClockHistory, BsBookmark, BsMoon } from "react-icons/bs";
 import { IoIosSettings } from "react-icons/io";
 import { TbMessageReport } from "react-icons/tb";
-import styles from "./MorePopup.module.scss";
 import { IconType } from "react-icons/lib";
+import styles from "./MorePopup.module.scss";
 
-const MorePopup = () => {
+const MorePopup: FC = () => {
 	type PopupItems = {
 		text: string;
 		icon?: IconType;

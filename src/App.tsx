@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Layout from "./layout";
@@ -6,13 +7,12 @@ import Messages from "./components/Messages";
 import Reels from "./components/Reels";
 import Explore from "./components/Explore/index";
 import Profile from "./components/Profile/Profile";
-import styles from "./App.module.scss";
 import Search from "./components/Search";
 import Notifications from "./components/Notifications";
 import Create from "./components/Create";
-import ModalContext from "./providers/ModalContext";
+import styles from "./App.module.scss";
 
-function App() {
+const App: FC = () => {
 	return (
 		<div className={styles.app}>
 			<Routes>
@@ -30,6 +30,6 @@ function App() {
 			</Routes>
 		</div>
 	);
-}
+};
 
 export default App;

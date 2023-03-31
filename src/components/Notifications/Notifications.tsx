@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const Notifications = () => {
+const Notifications: FC = () => {
 	return <h1>Notifications</h1>;
 };
 

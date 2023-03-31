@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { RiMenuLine } from "react-icons/ri";
 import NavigationItem from "./../NavigationItem";
 import MorePopup from "./../MorePopup";
 import styles from "./More.module.scss";
 
-const More = () => {
+const More: FC = () => {
 	const [showMorePopup, setShowMorePopp] = useState(false);
 
 	return (

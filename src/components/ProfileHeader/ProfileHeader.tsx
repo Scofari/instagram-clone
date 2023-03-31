@@ -1,29 +1,36 @@
-import Button from "../UI/index";
-import { IoIosSettings } from "react-icons/io";
-import { PostService } from "../../services/posts.service";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
+import { IoIosSettings } from "react-icons/io";
+import { PostService } from "../../services/posts.service";
 import styles from "./ProfileHeader.module.scss";
+import Button from "./../UI/Button";
+import Tooltip from "../UI/Tooltip";
 
 const ProfileHeader = () => {
 	const { username = "" } = useParams();
-	const { data } = useQuery(["posts"], () =>
+	const { data, isLoading } = useQuery(["posts"], () =>
 		PostService.getByUsername(username)
 	);
+	console.log("data: ", data);
+	console.log(isLoading);
 
 	if (!data?.username) return <p>Loading...</p>;
 
 	return (
 		<header className={styles.profileHeader}>
-			<div className={styles.userAvatar}>
-				<img src={data.avatar} alt="avatar" />
-			</div>
+			<Tooltip content="Change profile photo">
+				<div className={styles.userAvatar}>
+					<img src={data.avatar} alt="avatar" />
+				</div>
+			</Tooltip>
 
 			<div className={styles.infoProfile}>
 				<div className={styles.editProfile}>
 					<h2>{data.username}</h2>
 					<Button btnLight={styles.btn} text="Edit profile" />
-					<IoIosSettings />
+					<Tooltip content="Options">
+						<IoIosSettings />
+					</Tooltip>
 				</div>
 				<ul>
 					{data.followers.map((item, i) => (

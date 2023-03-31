@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Logo.module.scss";
 
-const Logo = () => {
+const Logo: FC = () => {
 	return (
 		<div className={styles.logo}>
 			<Link to="/">

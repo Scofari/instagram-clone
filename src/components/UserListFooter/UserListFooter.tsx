@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./UserListFooter.module.scss";
 
-const UserListFooter = () => {
+const UserListFooter: FC = () => {
 	const footerList = [
 		"About",
 		"Help",

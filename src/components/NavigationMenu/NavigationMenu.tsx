@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
 	RiHeartLine,
 	RiHomeHeartLine,
@@ -30,7 +31,7 @@ import styles from "./NavigationMenu.module.scss";
 // 	{ icon: RiMenuLine, title: "More", to: "" },
 // ];
 
-const NavigationMenu = () => {
+const NavigationMenu: FC = () => {
 	return (
 		<nav>
 			{/* {navigationMenu.map((item) => (

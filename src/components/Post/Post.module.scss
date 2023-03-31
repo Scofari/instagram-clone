@@ -15,21 +15,6 @@
 		cursor: pointer;
 	}
 
-	.actions {
-		padding: 1.2rem 0;
-		font-size: 2.3rem;
-		display: flex;
-		gap: 1.5rem;
-
-		:last-child {
-			margin-left: auto;
-		}
-
-		svg:hover {
-			cursor: pointer;
-			opacity: 0.5;
-		}
-	}
 
 	p {
 		padding: 1rem 0;

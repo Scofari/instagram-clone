@@ -1,3 +1,4 @@
+import { useContext, FC } from "react";
 import {
 	IoAddSharp,
 	AiOutlineTable,
@@ -5,13 +6,11 @@ import {
 	CgProfile,
 } from "react-icons/all";
 import Highlight from "../Highlight";
-
-import HeaderProfile from "../ProfileHeader";
+import ProfileHeader from "../ProfileHeader";
 import ProfileContent from "./../ProfileContent/index";
 import NavigationItem from "../NavigationItem";
-import styles from "./Profile.module.scss";
-import { useContext } from "react";
 import { ModalContext } from "../../providers/ModalContext";
+import styles from "./Profile.module.scss";
 
 const navigationProfile = [
 	{ icon: AiOutlineTable, title: "POSTS" },
@@ -19,12 +18,12 @@ const navigationProfile = [
 	{ icon: CgProfile, title: "TAGGED" },
 ];
 
-const Profile = () => {
+const Profile: FC = () => {
 	const { setOpenModal } = useContext(ModalContext);
 
 	return (
 		<div className={styles.profile}>
-			<HeaderProfile />
+			<ProfileHeader />
 
 			<div
 				className={styles.highlightList}

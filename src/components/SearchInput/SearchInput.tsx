@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
-
 import styles from "./SearchInput.module.scss";
 
 interface SearchInputProps {

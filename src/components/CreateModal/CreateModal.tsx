@@ -1,8 +1,7 @@
-import React from "react";
 import Modal from "../Modal";
-import Button from "../UI";
 import SVGMedia from "./SVGMedia";
 import styles from "./CreateModal.module.scss";
+import Button from "../UI/Button";
 
 interface CreateModalProps {
 	setOpenModal: (x: boolean) => void;
