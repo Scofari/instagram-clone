@@ -13,7 +13,7 @@ interface HeaderPostProps extends IPost {}
 const HeaderPost = ({ username, avatar, dateTime, title }: HeaderPostProps) => {
 	return (
 		<div className={styles.post}>
-			<Tooltip content={<ProfilePopup />}>
+			<Tooltip content={<ProfilePopup username={username} />}>
 				<Link to={`/${username}`}>
 					<div className={styles.avatar}>
 						<img src={avatar} alt="avatar" />

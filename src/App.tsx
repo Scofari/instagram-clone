@@ -14,7 +14,7 @@ import styles from "./App.module.scss";
 
 const App: FC = () => {
 	return (
-		<div className={styles.app}>
+		<>
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
@@ -23,12 +23,12 @@ const App: FC = () => {
 					<Route path="/notifications" element={<Notifications />} />
 					<Route path="/explore" element={<Explore />} />
 					<Route path="/reels" element={<Reels />} />
-					<Route path="/:username" element={<Profile />} />
 					<Route path="/create" element={<Create />} />
+					<Route path="/:username" element={<Profile />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
-		</div>
+		</>
 	);
 };
 

@@ -2,19 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { IoIosSettings } from "react-icons/io";
 import { PostService } from "../../services/posts.service";
-import styles from "./ProfileHeader.module.scss";
 import Button from "./../UI/Button";
 import Tooltip from "../UI/Tooltip";
+import styles from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {
 	const { username = "" } = useParams();
 	const { data, isLoading } = useQuery(["posts"], () =>
 		PostService.getByUsername(username)
 	);
-	console.log("data: ", data);
-	console.log(isLoading);
+	console.log("username: ", username);
 
-	if (!data?.username) return <p>Loading...</p>;
+	if (!data?.username || isLoading) return <p>Loading...</p>;
 
 	return (
 		<header className={styles.profileHeader}>

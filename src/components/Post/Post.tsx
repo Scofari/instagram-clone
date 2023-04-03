@@ -20,18 +20,14 @@ const Post = ({ post }: PostProps) => {
 			<div className={styles.cover}>
 				<img src={post.avatar} alt="cover" />
 			</div>
-
 			<PostActions />
-
 			<span>{post.likes} likes</span>
-
 			<p>
 				<span>
 					<Link to={`/${post.username}`}>{post.username}</Link>
 				</span>
 				{post.comment}
 			</p>
-
 			<CommentForm />
 		</div>
 	);
