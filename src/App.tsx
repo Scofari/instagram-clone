@@ -10,6 +10,7 @@ import Profile from "./components/Profile/Profile";
 import Search from "./components/Search";
 import Notifications from "./components/Notifications";
 import Create from "./components/Create";
+import Comment from "./components/Comment";
 import styles from "./App.module.scss";
 
 const App: FC = () => {
@@ -25,6 +26,7 @@ const App: FC = () => {
 					<Route path="/reels" element={<Reels />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/:username" element={<Profile />} />
+					<Route path="/p/:id" element={<Comment />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>

@@ -6,7 +6,7 @@ interface ModalProps {
 	children: ReactNode;
 	style: React.CSSProperties;
 	setOpenModal: (x: boolean) => void;
-	title?: string;
+	title?: string | ReactNode;
 	highlight?: boolean;
 }
 
