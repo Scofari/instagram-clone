@@ -7,8 +7,13 @@ import { IPost } from "../../@types/post.interface";
 import styles from "./PostsList.module.scss";
 
 const PostsList: FC = () => {
-	const { data = [], isLoading } = useQuery(["posts"], () =>
-		PostService.getAll()
+	const { data = [], isLoading } = useQuery(
+		["posts"],
+		() => PostService.getAll(),
+		{
+			keepPreviousData: true,
+			refetchOnWindowFocus: false,
+		}
 	);
 
 	return (

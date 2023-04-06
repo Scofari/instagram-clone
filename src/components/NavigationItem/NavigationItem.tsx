@@ -17,6 +17,7 @@ const NavigationItem = ({
 	src = "",
 	navProfile = "",
 }: NavigationItemProps) => {
+	console.log("to: ", to);
 	return (
 		<li className={styles.item}>
 			<NavLink
