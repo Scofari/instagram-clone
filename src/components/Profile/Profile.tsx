@@ -19,7 +19,7 @@ const navigationProfile = [
 ];
 
 const Profile: FC = () => {
-	const { setOpenModal } = useContext(ModalContext);
+	// const { setOpenModal } = useContext(ModalContext);
 
 	return (
 		<div className={styles.profile}>
@@ -27,7 +27,7 @@ const Profile: FC = () => {
 
 			<div
 				className={styles.highlightList}
-				onClick={() => setOpenModal(true)}
+				// onClick={() => setOpenModal(true)}
 			>
 				<Highlight icon={IoAddSharp} text="New" />
 			</div>

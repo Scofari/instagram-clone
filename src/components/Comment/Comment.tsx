@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import CommentForm from "../CommentForm";
 import Modal from "../Modal";
 import Post from "../Post";

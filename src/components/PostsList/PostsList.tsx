@@ -10,10 +10,7 @@ const PostsList: FC = () => {
 	const { data = [], isLoading } = useQuery(
 		["posts"],
 		() => PostService.getAll(),
-		{
-			keepPreviousData: true,
-			refetchOnWindowFocus: false,
-		}
+		{ keepPreviousData: true, refetchOnWindowFocus: false }
 	);
 
 	return (

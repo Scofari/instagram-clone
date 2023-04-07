@@ -1,22 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface PostState {
-	like: boolean;
+    isLiked: boolean;
 }
 
 const initialState: PostState = {
-	like: false,
+    isLiked: false,
 };
 
-const { actions, reducer: postReducer } = createSlice({
-	name: "post",
-	initialState,
-	reducers: {
-		toggleLike(state) {
-			state.like = !state.like;
-		},
-	},
+export const postSlice = createSlice({
+    name: "post",
+    initialState,
+    reducers: {
+        toggleLike(state) {
+            state.isLiked = !state.isLiked;
+        },
+    },
 });
 
-export const { toggleLike } = actions;
-export default postReducer;
+export const { toggleLike } = postSlice.actions;
+export default postSlice.reducer;

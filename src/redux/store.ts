@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import postReducer from "./postSlice";
 
 export const store = configureStore({
-	reducer: {
-		postReducer,
-	},
-	devTools: true,
+    reducer: {
+        post: postReducer,
+    },
+    devTools: true,
 });
 
 type AppDispatch = typeof store.dispatch;
