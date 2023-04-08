@@ -1,73 +1,50 @@
 import { FC } from "react";
+import { useSelector } from "react-redux";
 import {
-	RiHeartLine,
-	RiHomeHeartLine,
-	RiCompass3Line,
-	RiVideoLine,
-	RiMessengerLine,
-	RiSearchLine,
-	RiAddBoxLine,
-	RiMenuLine,
+  RiHeartLine,
+  RiHomeHeartLine,
+  RiCompass3Line,
+  RiVideoLine,
+  RiMessengerLine,
 } from "react-icons/ri";
 import NavigationItem from "../NavigationItem";
 import More from "../More";
 import Create from "../Create";
 import Search from "../Search";
-import styles from "./NavigationMenu.module.scss";
-
-// const navigationMenu = [
-// 	{ icon: RiHomeHeartLine, title: "Home", to: "/" },
-// 	{ icon: RiSearchLine, title: "Search", to: "/search" },
-// 	{ icon: RiCompass3Line, title: "Explore", to: "/explore" },
-// 	{ icon: RiVideoLine, title: "Reels", to: "/reels" },
-// 	{ icon: RiMessengerLine, title: "Messages", to: "/direct/inbox" },
-// 	{ icon: RiHeartLine, title: "Notifications", to: "/notifications" },
-// 	{ icon: RiAddBoxLine, title: "Create", to: "/create" },
-// 	{
-// 		src: "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
-// 		title: "Profile",
-// 		to: "/leo",
-// 	},
-// 	{ icon: RiMenuLine, title: "More", to: "" },
-// ];
+import { RootState } from "../../redux/store";
 
 const NavigationMenu: FC = () => {
-	return (
-		<nav>
-			{/* {navigationMenu.map((item) => (
-				<NavigationItem {...item} />
-			))} */}
-			<NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
-			<Search />
-			<NavigationItem
-				icon={RiCompass3Line}
-				to="/explore"
-				title="Explore"
-			/>
-			<NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
+  const currentUser = useSelector((state: RootState) => state.app.currentUser);
 
-			<NavigationItem
-				icon={RiMessengerLine}
-				to="/direct/inbox"
-				title="Messages"
-			/>
+  return (
+    <nav>
+      <NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
+      <Search />
+      <NavigationItem icon={RiCompass3Line} to="/explore" title="Explore" />
+      <NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
 
-			<NavigationItem
-				icon={RiHeartLine}
-				to="/notifications"
-				title="Notifications"
-			/>
-			<Create />
-			<NavigationItem
-				src={
-					"https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-				}
-				to="/leo"
-				title="Profile"
-			/>
-			<More />
-		</nav>
-	);
+      <NavigationItem
+        icon={RiMessengerLine}
+        to="/direct/inbox"
+        title="Messages"
+      />
+
+      <NavigationItem
+        icon={RiHeartLine}
+        to="/notifications"
+        title="Notifications"
+      />
+      <Create />
+      {currentUser && (
+        <NavigationItem
+          src={currentUser.avatar}
+          to={`/${currentUser.username}`}
+          title="Profile"
+        />
+      )}
+      <More />
+    </nav>
+  );
 };
 
 export default NavigationMenu;

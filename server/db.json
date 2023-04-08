@@ -1,4 +1,19 @@
 {
+	"authenticate": {
+		"id": 6,
+		"avatar": "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+		"username": "leo"
+		
+	},
+	"my-profile": {
+		"id": 6,
+		"avatar": "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+		"username": "leo",
+		"status": "Less is more",
+		"postsCount": 2,
+		"followersCount": 3,
+		"followingCount": 4
+	},
 	"posts": [
 		{
 			"id": 1,
@@ -103,6 +118,43 @@
 			"postsCount": 2,
 			"followersCount": 3,
 			"followingCount": 4
+		}
+	],
+	"suggested-followers": [
+		{
+			"id": 1,
+			"avatar": "https://pyxis.nymag.com/v1/imgs/8d9/0a2/3080246fe006e95b46306b7a9bc245bb24-elon-musk.rhorizontal.w700.jpg",
+			"username": "elonmusk",
+			"followsYou": true,
+			"followedBy": []
+		},
+		{
+			"id": 2,
+			"avatar": "https://ted-conferences-speaker-photos-production.s3.amazonaws.com/yoa4pm3vyerco6hqbhjxly3bf41d",
+			"username": "thisisbillgates",
+			"followsYou": true,
+			"followedBy": []
+		},
+		{
+			"id": 3,
+			"avatar": "https://cdnn1.img.armeniasputnik.am/img/1506/51/15065139_150:0:1044:984_1920x0_80_0_0_e01039280098cd91b89d2b71d41999e6.jpg",
+			"username": "therock",
+			"followsYou": false,
+			"followedBy": ["elonmusk"]
+		},
+		{
+			"id": 4,
+			"avatar": "https://media.vogue.co.uk/photos/61dda2e71bb9b719caedae94/2:3/w_2560%2Cc_limit/ew%2520x%2520macksfilm%2520british%2520vogue.jpg",
+			"username": "emmawatson",
+			"followsYou": false,
+			"followedBy": ["elonmusk", "scarlettjohanssonworld"]
+		},
+		{
+			"id": 5,
+			"avatar": "https://i.insider.com/60661e04902281001950aa7e?width=700",
+			"username": "scarlettjohanssonworld",
+			"followsYou": false,
+			"followedBy": []
 		}
 	]
 }

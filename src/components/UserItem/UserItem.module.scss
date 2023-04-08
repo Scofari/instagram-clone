@@ -5,6 +5,7 @@
 
 	a {
 		text-decoration: none;
+		
 	}
 
 	.userInfo {
@@ -33,6 +34,11 @@
 			span {
 				font-size: 13px;
 				color: #a3a3a3;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				width: 220px;
+				// width: 30%;
+				overflow: hidden;
 			}
 		}
 	}
