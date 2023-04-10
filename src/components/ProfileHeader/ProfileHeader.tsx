@@ -5,53 +5,53 @@ import styles from "./ProfileHeader.module.scss";
 import { IUser } from "../../types/user.interface";
 
 const ProfileHeader = ({
-  avatar,
-  username,
-  postsCount,
-  followersCount,
-  followingCount,
-  status,
+	avatar,
+	username,
+	postsCount,
+	followersCount,
+	followingCount,
+	status,
 }: IUser) => {
-  return (
-    <header className={styles.profileHeader}>
-      <Tooltip content="Change profile photo">
-        <div className={styles.userAvatar}>
-          <img src={avatar} alt="avatar" />
-        </div>
-      </Tooltip>
+	return (
+		<header className={styles.profileHeader}>
+			<Tooltip content="Change profile photo">
+				<div className={styles.userAvatar}>
+					<img src={avatar} alt="avatar" />
+				</div>
+			</Tooltip>
 
-      <div className={styles.infoProfile}>
-        <div className={styles.editProfile}>
-          <h2>{username}</h2>
-          <Button btnLight={styles.btn} text="Edit profile" />
-          <Tooltip content="Options">
-            <IoIosSettings />
-          </Tooltip>
-        </div>
-        <ul>
-          <li>
-            <span>{postsCount}</span> posts
-          </li>
-          <li>
-            <span>{followersCount}</span> followers
-          </li>
-          <li>
-            <span>{followingCount}</span> following
-          </li>
-        </ul>
-        <div className={styles.description}>
-          <span>{username}</span>
-          <h1>
-            {status}
-            <br />
-          </h1>
-          <a href="https://band.link/tdtin" target={"_blank"}>
-            band.link/tdtin
-          </a>
-        </div>
-      </div>
-    </header>
-  );
+			<div className={styles.infoProfile}>
+				<div className={styles.editProfile}>
+					<h2>{username}</h2>
+					<Button btnLight={styles.btn} text="Edit profile" />
+					<Tooltip content="Options">
+						<IoIosSettings />
+					</Tooltip>
+				</div>
+				<ul>
+					<li>
+						<span>{postsCount}</span> posts
+					</li>
+					<li>
+						<span>{followersCount}</span> followers
+					</li>
+					<li>
+						<span>{followingCount}</span> following
+					</li>
+				</ul>
+				<div className={styles.description}>
+					<span>{username}</span>
+					<h1>
+						{status}
+						<br />
+					</h1>
+					<a href="https://band.link/tdtin" target={"_blank"}>
+						band.link/tdtin
+					</a>
+				</div>
+			</div>
+		</header>
+	);
 };
 
 export default ProfileHeader;

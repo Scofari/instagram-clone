@@ -1,5 +1,5 @@
 import CommentForm from "../CommentForm";
-import Modal from "../Modal";
+import Modal from "../UI/Modal";
 import Post from "../Post";
 import PostActions from "../PostActions";
 import styles from "./Comment.module.scss";

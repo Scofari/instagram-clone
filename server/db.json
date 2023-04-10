@@ -3,7 +3,6 @@
 		"id": 6,
 		"avatar": "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
 		"username": "leo"
-		
 	},
 	"my-profile": {
 		"id": 6,
@@ -17,7 +16,7 @@
 	"posts": [
 		{
 			"id": 1,
-			"avatar": "https://pyxis.nymag.com/v1/imgs/8d9/0a2/3080246fe006e95b46306b7a9bc245bb24-elon-musk.rhorizontal.w700.jpg",
+			"avatar": "https://i.insider.com/639caa68b5600000185b13bd?width=1136&format=jpeg",
 			"username": "elonmusk",
 			"description": "Some people don't like change, but you need to embrace change if the alternative is disaster.",
 			"likes": "296,594",

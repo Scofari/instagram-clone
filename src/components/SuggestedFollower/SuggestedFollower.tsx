@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./UserItem.module.scss";
+import styles from "./SuggestedFollower.module.scss";
 
-interface UserItemProps {
+interface SuggestedFollowerProps {
 	username: string;
 	description: string;
 	action: string;
@@ -11,7 +11,7 @@ interface UserItemProps {
 	style?: React.CSSProperties;
 }
 
-const UserItem = ({
+const SuggestedFollower = ({
 	username,
 	description,
 	action,
@@ -19,11 +19,11 @@ const UserItem = ({
 	style,
 	setIsFollowing,
 	to = "",
-}: UserItemProps) => {
+}: SuggestedFollowerProps) => {
 	return (
-		<div className={styles.user}>
+		<div className={styles.follower}>
 			<Link to={to}>
-				<div className={styles.userInfo}>
+				<div className={styles.followerInfo}>
 					<img src={avatar} alt="avatar" style={style} />
 					<div>
 						<p>{username}</p>
@@ -36,4 +36,4 @@ const UserItem = ({
 	);
 };
 
-export default UserItem;
+export default SuggestedFollower;

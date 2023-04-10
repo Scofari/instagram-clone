@@ -1,8 +1,8 @@
 import { FC } from "react";
-import styles from "./UserListFooter.module.scss";
+import styles from "./SuggestedFollowersFooter.module.scss";
 
-const UserListFooter: FC = () => {
-	const footerList = [
+const SuggestedFollowersFooter: FC = () => {
+	const suggestedFollowersFooter = [
 		"About",
 		"Help",
 		"Press",
@@ -18,8 +18,8 @@ const UserListFooter: FC = () => {
 	return (
 		<div>
 			<nav>
-				<ul className={styles.footerList}>
-					{footerList.map((item, i) => (
+				<ul className={styles.suggestedFollowersFooter}>
+					{suggestedFollowersFooter.map((item, i) => (
 						<li key={i}>
 							<a href="#">{item}</a>
 						</li>
@@ -33,4 +33,4 @@ const UserListFooter: FC = () => {
 	);
 };
 
-export default UserListFooter;
+export default SuggestedFollowersFooter;

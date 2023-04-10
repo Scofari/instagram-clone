@@ -1,3 +1,3 @@
-import UserListFooter from "./UserListFooter";
+import SuggestedFollowersFooter from "./SuggestedFollowersFooter";
 
-export default UserListFooter;
+export default SuggestedFollowersFooter;

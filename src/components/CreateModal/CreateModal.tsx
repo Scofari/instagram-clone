@@ -1,4 +1,4 @@
-import Modal from "../Modal";
+import Modal from "../UI/Modal";
 import SVGMedia from "./SVGMedia";
 import styles from "./CreateModal.module.scss";
 import Button from "../UI/Button";

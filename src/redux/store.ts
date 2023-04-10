@@ -4,11 +4,11 @@ import appReducer from "./appSlice";
 import postReducer from "./postSlice";
 
 export const store = configureStore({
-  reducer: {
-    app: appReducer,
-    post: postReducer,
-  },
-  devTools: true,
+	reducer: {
+		app: appReducer,
+		post: postReducer,
+	},
+	devTools: true,
 });
 
 type AppDispatch = typeof store.dispatch;
