@@ -9,17 +9,17 @@ interface CreateModalProps {
 
 const CreateModal = ({ setOpenModal }: CreateModalProps) => {
 	return (
-		<Modal
-			setOpenModal={setOpenModal}
-			title="Create new post"
-			style={{ width: "500px", height: "560px" }}
-		>
-			<div className={styles.modalContent}>
-				<SVGMedia />
-				<p>Drag photos and videos here</p>
-				<Button text="Select from computer" />
-			</div>
-		</Modal>
+		// <Modal
+		// 	setOpenModal={setOpenModal}
+		// 	title="Create new post"
+		// 	style={{ width: "500px", height: "560px" }}
+		// >
+		// 	<div className={styles.modalContent}>
+		// 		<SVGMedia />
+		// 		<p>Drag photos and videos here</p>
+		// 		<Button text="Select from computer" />
+		// 	</div>
+		// </Modal>
 	);
 };
 

@@ -13,45 +13,45 @@ import Notifications from "./components/Notifications";
 import Create from "./components/Create";
 import Comment from "./components/Comment";
 import { useQuery } from "@tanstack/react-query";
-import { getCurrentUser, getSuggestedFollowers } from "./api";
+import { getCurrentUser } from "./api";
 import { useAppDispatch } from "./redux/store";
 import { setCurrentUser } from "./redux/appSlice";
 import "./App.module.scss";
 
 const App: FC = () => {
-	const { username = "" } = useParams();
-	const dispatch = useAppDispatch();
-	const { data: currentUser, isLoading: isUserLoading } = useQuery(
-		["auth"],
-		getCurrentUser
-	);
+    const { username = "" } = useParams();
+    const dispatch = useAppDispatch();
+    const { data: currentUser, isLoading: isUserLoading } = useQuery(
+        ["auth"],
+        getCurrentUser
+    );
 
-	useEffect(() => {
-		if (currentUser) {
-			dispatch(setCurrentUser(currentUser));
-		}
-	}, [isUserLoading]);
+    useEffect(() => {
+        if (currentUser) {
+            dispatch(setCurrentUser(currentUser));
+        }
+    }, [isUserLoading]);
 
-	if (isUserLoading || !currentUser) return <LinearProgress />;
+    // if (isUserLoading || !currentUser) return <LinearProgress />;
 
-	return (
-		<>
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route index element={<Home />} />
-					<Route path="/direct/inbox" element={<Messages />} />
-					<Route path="/search" element={<Search />} />
-					<Route path="/notifications" element={<Notifications />} />
-					<Route path="/explore" element={<Explore />} />
-					<Route path="/reels" element={<Reels />} />
-					<Route path="/create" element={<Create />} />
-					<Route path="/:username" element={<Profile />} />
-					<Route path="/p/:id" element={<Comment />} />
-					<Route path="*" element={<NotFound />} />
-				</Route>
-			</Routes>
-		</>
-	);
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="/direct/inbox" element={<Messages />} />
+                    <Route path="/search" element={<Search />} />
+                    <Route path="/notifications" element={<Notifications />} />
+                    <Route path="/explore" element={<Explore />} />
+                    <Route path="/reels" element={<Reels />} />
+                    <Route path="/create" element={<Create />} />
+                    <Route path="/:username" element={<Profile />} />
+                    <Route path="/p/:id" element={<Comment />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+            </Routes>
+        </>
+    );
 };
 
 export default App;

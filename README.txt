@@ -1,8 +1,5 @@
 FIXME: To fix the following issues:
-1.input component 
 2.modal component using Modal Context
-3.fetching data using react query
-4. Rename user list to SwitchAccounts and SuggestedFollowers
 =======================================
 TODO: To do the next features:
 1.show user profile when hovering over username and avatar
