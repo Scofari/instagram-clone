@@ -1,0 +1,15 @@
+.preloader {
+	width: 0;
+	height: 2px;
+	background: orange;
+	animation: 1s progress infinite linear;
+}
+
+@keyframes progress {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100vw;
+	}
+}

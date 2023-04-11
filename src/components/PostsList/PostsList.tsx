@@ -3,28 +3,25 @@ import { useQuery } from "@tanstack/react-query";
 import Post from "../Post";
 import PostSkeleton from "./PostSkeleton";
 import { IPost } from "../../types/post.interface";
-import styles from "./PostsList.module.scss";
 import { getAllPosts } from "../../api";
-import { CircularProgress } from "@mui/material";
+import Spinner from "../UI/Spinner";
+import styles from "./PostsList.module.scss";
+import SuggestedFollowerSkeleton from "../SuggestedFollower/SuggestedFollowerSkeleton";
 
 const PostsList: FC = () => {
-    const { data = [], isLoading } = useQuery(["posts"], getAllPosts);
+	const { data = [], isLoading } = useQuery(["posts"], getAllPosts);
 
-    return (
-        <div className={styles.postsList}>
-            {isLoading ? (
-                <>
-                    {/* <div className={styles.progress}>
-                        <h1>Loading..</h1>
-                    </div> */}
-                    <PostSkeleton />
-                </>
-            ) : (
-                !!data.length &&
-                data.map((post: IPost) => <Post post={post} key={post.id} />)
-            )}
-        </div>
-    );
+	return (
+		<div className={styles.postsList}>
+			{isLoading ? (
+				<>
+					<PostSkeleton />
+				</>
+			) : (
+				data.map((post: IPost) => <Post post={post} key={post.id} />)
+			)}
+		</div>
+	);
 };
 
 export default PostsList;

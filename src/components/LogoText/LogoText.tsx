@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Logo.module.scss";
+import styles from "./LogoText.module.scss";
 
-const Logo: FC = () => {
+const LogoText: FC = () => {
 	return (
 		<div className={styles.logo}>
 			<Link to="/">
@@ -28,4 +28,4 @@ const Logo: FC = () => {
 	);
 };
 
-export default Logo;
+export default LogoText;

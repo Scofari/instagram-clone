@@ -32,3 +32,21 @@
 		font-weight: 500;
 	}
 }
+
+.modalContent {
+	animation: show 800ms ease-in-out;
+}
+
+.sizeModal {
+	width: 400px;
+	height: 170px;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

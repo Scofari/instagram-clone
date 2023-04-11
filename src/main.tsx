@@ -5,9 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient } from "@tanstack/query-core";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import App from "./App";
-import ModalContext from "./providers/ModalContext";
 import { store } from "./redux/store";
+import App from "./App";
 import "./index.css";
 
 const queryClient = new QueryClient();
@@ -17,9 +16,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<BrowserRouter>
 		<Provider store={store}>
 			<QueryClientProvider client={queryClient}>
-				<ModalContext>
-					<App />
-				</ModalContext>
+				<App />
 				<ReactQueryDevtools />
 			</QueryClientProvider>
 		</Provider>

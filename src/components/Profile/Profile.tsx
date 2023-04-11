@@ -1,61 +1,36 @@
-import { useContext, FC } from "react";
-import {
-	IoAddSharp,
-	AiOutlineTable,
-	BsBookmark,
-	CgProfile,
-} from "react-icons/all";
-import { LinearProgress } from "@mui/material";
-import Highlight from "../Highlight";
-import ProfileHeader from "../ProfileHeader";
-import ProfileContent from "./../ProfileContent/index";
+import ContentLoader from "react-content-loader";
 import NavigationItem from "../NavigationItem";
-import { ModalContext } from "../../providers/ModalContext";
-import styles from "./Profile.module.scss";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
-import { getUserByUsername } from "../../api";
-import NotFound from "../NotFound";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
-const navigationProfile = [
-	{ icon: AiOutlineTable, title: "POSTS" },
-	{ icon: BsBookmark, title: "SAVED" },
-	{ icon: CgProfile, title: "TAGGED" },
-];
-
-const Profile: FC = () => {
-	// const { setOpenModal } = useContext(ModalContext);
-	const { username = "" } = useParams();
-	const { data, isLoading } = useQuery(["users", username], () =>
-		getUserByUsername(username)
+const Profile = () => {
+	const currentUser = useSelector(
+		(state: RootState) => state.app.currentUser
 	);
 
-	// if (isLoading) return ;
-	if (!data) return <LinearProgress color="inherit" />;
+	return (
+		<>
+			{currentUser ? (
+				<NavigationItem
+					src={currentUser.avatar}
+					to={`/${currentUser.username}`}
+					title="Profile"
+				/>
+			) : (
+				<ContentLoader
+					speed={0}
+					width={150}
+					height={39}
+					viewBox="0 0 150 40"
+					backgroundColor="#323232"
+					foregroundColor="#000"
+				>
+					<rect x="40" y="8" rx="3" ry="3" width="70" height="14" />
 
-	return isLoading ? (
-		<LinearProgress color="inherit" />
-	) : (
-		<div className={styles.profile}>
-			<ProfileHeader {...data} />
-
-			<div
-				className={styles.highlightList}
-				// onClick={() => setOpenModal(true)}
-			>
-				<Highlight icon={IoAddSharp} text="New" />
-			</div>
-			<div className={styles.navigation}>
-				{navigationProfile.map((item, idx) => (
-					<NavigationItem
-						key={idx}
-						navProfile={styles.navProfile}
-						{...item}
-					/>
-				))}
-			</div>
-			<ProfileContent />
-		</div>
+					<circle cx="14" cy="14" r="14" />
+				</ContentLoader>
+			)}
+		</>
 	);
 };
 

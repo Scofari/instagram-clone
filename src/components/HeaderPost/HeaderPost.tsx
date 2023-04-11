@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BsThreeDots } from "react-icons/bs";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { IPost } from "../../@types/post.interface";
+import { IPost } from "../../types/post.interface";
 import Tooltip from "../UI/Tooltip";
 import ProfilePopup from "../ProfilePopup";
 import styles from "./HeaderPost.module.scss";

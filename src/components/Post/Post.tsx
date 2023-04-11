@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IPost } from "../../@types/post.interface";
+import { IPost } from "../../types/post.interface";
 import CommentForm from "../CommentForm";
 import PostActions from "../PostActions/PostActions";
 import HeaderPost from "./../HeaderPost";
