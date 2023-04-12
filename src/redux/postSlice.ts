@@ -1,22 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IUser } from "../types/user.interface";
+import { IPost } from "../types/post.interface";
 
 export interface PostState {
-    isLiked: boolean;
+	isLiked: boolean;
+	post: IPost | null;
 }
 
 const initialState: PostState = {
-    isLiked: false,
+	isLiked: false,
+	post: null,
 };
 
 export const postSlice = createSlice({
-    name: "post",
-    initialState,
-    reducers: {
-        toggleLike(state) {
-            state.isLiked = !state.isLiked;
-        },
-    },
+	name: "post",
+	initialState,
+	reducers: {
+		setIsLiked(state) {
+			state.isLiked = !state.isLiked;
+		},
+		setPost(state, { payload }: PayloadAction<IPost>) {
+			state.post = payload;
+		},
+	},
 });
 
-export const { toggleLike } = postSlice.actions;
+export const { setIsLiked, setPost } = postSlice.actions;
 export default postSlice.reducer;

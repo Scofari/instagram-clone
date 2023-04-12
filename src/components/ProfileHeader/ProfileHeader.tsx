@@ -12,6 +12,9 @@ const ProfileHeader = ({
 	followingCount,
 	status,
 }: IUser) => {
+	const auth = username === "leo";
+	const btnLight = auth ? styles.btnLight : "";
+
 	return (
 		<header className={styles.profileHeader}>
 			<Tooltip content="Change profile photo">
@@ -23,7 +26,13 @@ const ProfileHeader = ({
 			<div className={styles.infoProfile}>
 				<div className={styles.editProfile}>
 					<h2>{username}</h2>
-					<Button btnLight={styles.btn} text="Edit profile" />
+					<Button
+						btnLight={btnLight}
+						text={auth ? "Edit profile" : "Follow"}
+					/>
+					{!auth && (
+						<Button btnLight={styles.btnLight} text="Message" />
+					)}{" "}
 					<Tooltip content="Options">
 						<IoIosSettings />
 					</Tooltip>

@@ -11,35 +11,31 @@ import More from "../More";
 import Create from "../Create";
 import Search from "../Search";
 import Profile from "../Profile";
+import Notifications from "../Notifications";
 
 const NavigationMenu: FC = () => {
 	return (
-		<div className="">
-			<nav>
-				<NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
-				<Search />
-				<NavigationItem
-					icon={RiCompass3Line}
-					to="/explore"
-					title="Explore"
-				/>
-				<NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
+		<nav>
+			<NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
+			<Search />
+			<NavigationItem
+				icon={RiCompass3Line}
+				to="/explore"
+				title="Explore"
+			/>
+			<NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
 
-				<NavigationItem
-					icon={RiMessengerLine}
-					to="/direct/inbox"
-					title="Messages"
-				/>
-				<NavigationItem
-					icon={RiHeartLine}
-					// to="/notifications"
-					title="Notifications"
-				/>
-				<Create />
-				<Profile />
-				<More />
-			</nav>
-		</div>
+			<NavigationItem
+				icon={RiMessengerLine}
+				to="/direct/inbox"
+				title="Messages"
+			/>
+			<Notifications />
+
+			<Create />
+			<Profile />
+			<More />
+		</nav>
 	);
 };
 

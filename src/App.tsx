@@ -17,6 +17,7 @@ import { useAppDispatch } from "./redux/store";
 import { setCurrentUser } from "./redux/appSlice";
 import "./App.module.scss";
 import LinearPreloader from "./components/UI/LinearPreloader";
+import InitialLoadingPage from "./components/InitialLoadingPage/InitialLoadingPage";
 
 const App: FC = () => {
 	const { username = "" } = useParams();
@@ -32,7 +33,8 @@ const App: FC = () => {
 		}
 	}, [isUserLoading]);
 
-	if (isUserLoading || !currentUser) return <LinearPreloader />;
+	// if (isUserLoading || !currentUser || username) return <LinearPreloader />;
+	if (isUserLoading || !currentUser) return <InitialLoadingPage />;
 
 	return (
 		<>
@@ -40,11 +42,8 @@ const App: FC = () => {
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path="/direct/inbox" element={<Messages />} />
-					<Route path="/search" element={<Search />} />
-					<Route path="/notifications" element={<Notifications />} />
 					<Route path="/explore" element={<Explore />} />
 					<Route path="/reels" element={<Reels />} />
-					<Route path="/create" element={<Create />} />
 					<Route path="/:username" element={<Profile />} />
 					<Route path="/p/:id" element={<Comment />} />
 					<Route path="*" element={<NotFound />} />

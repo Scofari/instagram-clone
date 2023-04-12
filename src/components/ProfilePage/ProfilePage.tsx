@@ -5,14 +5,16 @@ import {
 	BsBookmark,
 	CgProfile,
 } from "react-icons/all";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getUserByUsername } from "../../api";
 import Highlight from "../Highlight";
 import ProfileHeader from "../ProfileHeader";
 import ProfileContent from "../ProfileContent/index";
 import NavigationItem from "../NavigationItem";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
-import { getUserByUsername } from "../../api";
+import CircularPreloader from "../UI/CircularPreloader";
 import styles from "./ProfilePage.module.scss";
+import Spinner from "../UI/Spinner";
 
 const navigationProfile = [
 	{ icon: AiOutlineTable, title: "POSTS" },
@@ -26,12 +28,10 @@ const ProfilePage: FC = () => {
 		getUserByUsername(username)
 	);
 
-	// if (isLoading) return ;
-	if (!data) return <h1>no data</h1>;
+	if (isLoading) return <CircularPreloader />;
+	if (!data) return <Spinner />;
 
-	return isLoading ? (
-		<h1>Loading...</h1>
-	) : (
+	return (
 		<div className={styles.profile}>
 			<ProfileHeader {...data} />
 

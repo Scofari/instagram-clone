@@ -9,7 +9,6 @@ import SuggestedFollowerSkeleton from "../SuggestedFollower/SuggestedFollowerSke
 import styles from "./SuggestedFollowers.module.scss";
 
 const SuggestedFollowers: FC = () => {
-	const [isFollowing, setIsFollowing] = useState(false);
 	const { data: followers = [], isLoading } = useQuery(
 		["suggested-followers"],
 		getSuggestedFollowers
@@ -39,11 +38,10 @@ const SuggestedFollowers: FC = () => {
 			{isLoading
 				? suggestedFollowerSkeleton
 				: followers.map((follower) => {
-						const { id, avatar, followedBy, username, followsYou } =
-							follower;
+						const { username, id } = follower;
 						return (
 							<SuggestedFollower
-								key={follower.id}
+								key={id}
 								to={username}
 								description={getSuggestedFollowerDescription(
 									follower

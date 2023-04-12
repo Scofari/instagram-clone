@@ -4,12 +4,19 @@ import CommentForm from "../CommentForm";
 import PostActions from "../PostActions/PostActions";
 import HeaderPost from "./../HeaderPost";
 import styles from "./Post.module.scss";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../redux/store";
+import { setPost } from "../../redux/postSlice";
 
 interface PostProps {
 	post: IPost;
 }
 
 const Post = ({ post }: PostProps) => {
+	const dispatch = useAppDispatch();
+	useEffect(() => {
+		dispatch(setPost(post));
+	}, [post]);
 	return (
 		<div className={styles.wrapper}>
 			<HeaderPost {...post} />

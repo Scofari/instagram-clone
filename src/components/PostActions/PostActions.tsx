@@ -1,13 +1,17 @@
 import { FC, useState } from "react";
 import { FiHeart, BsChat, FiSend, BsBookmark } from "react-icons/all";
 import Tooltip from "../UI/Tooltip";
-import styles from "./PostActions.module.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../redux/store";
+import { setIsLiked } from "../../redux/postSlice";
+import styles from "./PostActions.module.scss";
 
 const PostActions: FC = () => {
-	const [isLiked, setIsLiked] = useState(false);
+	const isLiked = useSelector((state: RootState) => state.post.isLiked);
+	const dispatch = useAppDispatch();
 	const toggleLike = () => {
-		setIsLiked((prev) => !prev);
+		dispatch(setIsLiked());
 	};
 
 	return (
