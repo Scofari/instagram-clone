@@ -1,24 +1,20 @@
 .tooltipWrapper {
-    &:hover .tooltip {
-        display: block;
-    }
+    // &:hover .tooltip {
+    // 	display: block;
+    // }
 
     position: relative;
 }
 
 .tooltip {
-    display: none;
+    // display: none;
     position: absolute;
     top: 30px;
     left: 12px;
-    background-color: #2e2e2e;
+    background-color: #000;
     color: #fff;
     padding: 0.4rem 0.8rem;
     width: max-content;
-    border-top: 1px solid #fff;
-    border-bottom: 0.2px solid #6f6f6f;
-    border-left: 1px solid #fff;
-    border-right: 0.2px solid #474747;
     z-index: 100000;
 
     .tooltipContent {

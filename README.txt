@@ -1,5 +1,6 @@
 FIXME: To fix the following issues:
-2.modal component using Modal Context
+1.navigation menu 
+2.add animation for drop down menu
 =======================================
 TODO: To do the next features:
 1.show user profile when hovering over username and avatar

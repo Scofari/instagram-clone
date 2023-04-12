@@ -1,48 +1,47 @@
 .sizeModal {
-	background-color: red;
-	width: 1200px;
-	height: 660px;
-	border: 1px solid red;
+    background-color: red;
+    width: 1200px;
+    height: 660px;
+    border: 1px solid red;
 }
 
 .modalContent {
-	height: 100%;
-	width: 520px;
-	margin-left: auto;
-	border: 1px solid red;
+    height: 100%;
+    width: 520px;
+    border: 1px solid red;
 }
 
 .post {
-	height: 5rem;
-	display: flex;
-	align-items: center;
-	gap: 10px;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-	a {
-		text-decoration: none;
-	}
+    a {
+        text-decoration: none;
+    }
 
-	.avatar {
-		display: flex;
-		align-items: center;
-		gap: 10px;
+    .avatar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-		img {
-			height: 30px;
-			width: 30px;
-			margin-left: 10px;
-			border-radius: 50%;
-			object-fit: cover;
-			cursor: pointer;
-		}
+        img {
+            height: 30px;
+            width: 30px;
+            margin-left: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
 
-		span {
-			text-decoration: none;
-			font-weight: bold;
+        span {
+            text-decoration: none;
+            font-weight: bold;
 
-			&:hover {
-				opacity: 0.5;
-			}
-		}
-	}
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
 }
