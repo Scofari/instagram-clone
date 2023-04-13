@@ -10,7 +10,7 @@ interface SuggestedFollowerProps {
 }
 
 const SuggestedFollower = ({
-	to,
+	to = "",
 	description,
 	avatar,
 	username,

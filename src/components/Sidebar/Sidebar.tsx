@@ -8,24 +8,24 @@ import { RootState } from "../../redux/store";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
-	const dropDownMenu = useSelector(
-		(state: RootState) => state.app.dropDownMenu
+	const showDropDownMenu = useSelector(
+		(state: RootState) => state.app.showDropDownMenu
 	);
 
 	return (
 		<div
 			className={`${styles.sidebar} ${
-				dropDownMenu ? styles.sidebarSmall : ""
+				showDropDownMenu ? styles.sidebarSmall : ""
 			}`}
 		>
-			{dropDownMenu ? (
-				<div className={styles.logoSmall}>
+			{showDropDownMenu ? (
+				<div className={styles.logoIcon}>
 					<Link to="/">
 						<BsInstagram />
 					</Link>
 				</div>
 			) : (
-				<div className={styles.logoSmall}>
+				<div className={styles.logoText}>
 					<LogoText />
 				</div>
 			)}

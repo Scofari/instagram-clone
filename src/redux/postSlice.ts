@@ -4,12 +4,12 @@ import { IPost } from "../types/post.interface";
 
 export interface PostState {
 	isLiked: boolean;
-	post: IPost | null;
+	// post: IPost | null;
 }
 
 const initialState: PostState = {
 	isLiked: false,
-	post: null,
+	// post: null,
 };
 
 export const postSlice = createSlice({
@@ -19,11 +19,11 @@ export const postSlice = createSlice({
 		setIsLiked(state) {
 			state.isLiked = !state.isLiked;
 		},
-		setPost(state, { payload }: PayloadAction<IPost>) {
-			state.post = payload;
-		},
+		// setPost(state, { payload }: PayloadAction<IPost>) {
+		// 	state.post = payload;
+		// },
 	},
 });
 
-export const { setIsLiked, setPost } = postSlice.actions;
+export const { setIsLiked } = postSlice.actions;
 export default postSlice.reducer;

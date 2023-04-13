@@ -10,7 +10,6 @@
 	z-index: 200;
 	border-bottom-right-radius: 15px;
 	border-top-right-radius: 15px;
-	animation: show 500ms ease-in-out;
 
 	h2 {
 		margin: 15px 0 36px 12px;
@@ -40,24 +39,26 @@
 	}
 }
 
-@keyframes show {
-	from {
-		opacity: 0;
-		width: 0px;
-	}
-	to {
-		opacity: 1;
-		width: 430px;
-	}
+.fadeEnter {
+	opacity: 0;
+	width: 0px;
 }
 
-@keyframes hide {
-	from {
-		opacity: 1;
-		width: 430px;
-	}
-	to {
-		opacity: 0;
-		width: 0px;
-	}
+.fadeEnterActive {
+	opacity: 1;
+	width: 430px;
+	transition-property: width, opacity;
+	transition-duration: 600ms;
+}
+
+.fadeExit {
+	opacity: 1;
+	width: 430px;
+}
+
+.fadeExitActive {
+	opacity: 0;
+	width: 0px;
+	transition-property: width, opacity;
+	transition-duration: 600ms;
 }

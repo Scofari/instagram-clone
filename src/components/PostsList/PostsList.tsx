@@ -4,7 +4,6 @@ import Post from "../Post";
 import PostSkeleton from "./PostSkeleton";
 import { IPost } from "../../types/post.interface";
 import { getAllPosts } from "../../api";
-import Spinner from "../UI/Spinner";
 import styles from "./PostsList.module.scss";
 
 const PostsList: FC = () => {

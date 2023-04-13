@@ -3,27 +3,29 @@
 	width: 260px;
 	background-color: #000;
 	position: fixed;
-	// margin: 1rem 2.5rem;
 	padding: 0 10px;
 	margin-top: 0;
 	border-right: 1px solid rgba($color: #ffffff, $alpha: 0.15);
 	z-index: 300;
-	// animation: transitionDropDown 2s ease-in-out;
 }
 
-.logoSmall {
-	margin: 35px 0 30px 2px;
+.logoIcon {
+	margin: 32px 0 30px 12px;
 	font-size: 20px;
-	transition: all 0.5s ease-in-out;
 
 	svg {
 		animation: logoSmooth 0.5s ease-in-out;
 	}
 }
 
+.logoText {
+	svg {
+		animation: logoSmooth 0.5s ease-in-out;
+	}
+}
+
 .sidebarSmall {
-	margin-top: 0;
-	width: 50px;
+	width: 70px;
 	animation: transitionDropDown 1s ease-in-out;
 	transition: all 0.5s linear;
 	svg {

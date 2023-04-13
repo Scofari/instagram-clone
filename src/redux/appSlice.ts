@@ -5,13 +5,13 @@ import { ISuggestedFollower } from "../types/suggested-follower.interface";
 export interface AppState {
 	currentUser: IUserSummary | null;
 	suggestedFollowers: ISuggestedFollower[] | null;
-	dropDownMenu: boolean;
+	showDropDownMenu: boolean;
 }
 
 const initialState: AppState = {
 	currentUser: null,
 	suggestedFollowers: [],
-	dropDownMenu: false,
+	showDropDownMenu: false,
 };
 
 export const appSlice = createSlice({
@@ -27,12 +27,12 @@ export const appSlice = createSlice({
 		) {
 			state.suggestedFollowers = payload;
 		},
-		setDropDownMenu(state, { payload }) {
-			state.dropDownMenu = payload;
+		setShowDropDownMenu(state, { payload }) {
+			state.showDropDownMenu = payload;
 		},
 	},
 });
 
-export const { setCurrentUser, setSuggestedFollowers, setDropDownMenu } =
+export const { setCurrentUser, setSuggestedFollowers, setShowDropDownMenu } =
 	appSlice.actions;
 export default appSlice.reducer;
