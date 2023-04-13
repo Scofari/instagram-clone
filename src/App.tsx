@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getCurrentUser } from "./api";
 import { useAppDispatch } from "./redux/store";
@@ -16,35 +16,35 @@ import InitialLoadingPage from "./components/InitialLoadingPage";
 import "./App.module.scss";
 
 const App: FC = () => {
-	const dispatch = useAppDispatch();
-	const { data: currentUser, isLoading: isUserLoading } = useQuery(
-		["auth"],
-		getCurrentUser
-	);
+    const dispatch = useAppDispatch();
+    const { data: currentUser, isLoading: isUserLoading } = useQuery(
+        ["auth"],
+        getCurrentUser
+    );
 
-	useEffect(() => {
-		if (currentUser) {
-			dispatch(setCurrentUser(currentUser));
-		}
-	}, [isUserLoading]);
+    useEffect(() => {
+        if (currentUser) {
+            dispatch(setCurrentUser(currentUser));
+        }
+    }, [isUserLoading]);
 
-	if (isUserLoading || !currentUser) return <InitialLoadingPage />;
+    if (isUserLoading || !currentUser) return <InitialLoadingPage />;
 
-	return (
-		<>
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route index element={<Home />} />
-					<Route path="/direct/inbox" element={<Messages />} />
-					<Route path="/explore" element={<Explore />} />
-					<Route path="/reels" element={<Reels />} />
-					<Route path="/:username" element={<Profile />} />
-					<Route path="/p/:id" element={<PostModal />} />
-					<Route path="*" element={<NotFound />} />
-				</Route>
-			</Routes>
-		</>
-	);
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="/direct/inbox" element={<Messages />} />
+                    <Route path="/explore" element={<Explore />} />
+                    <Route path="/reels" element={<Reels />} />
+                    <Route path="/:username" element={<Profile />} />
+                    <Route path="/p/:id" element={<PostModal />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+            </Routes>
+        </>
+    );
 };
 
 export default App;

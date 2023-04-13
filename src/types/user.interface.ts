@@ -1,9 +1,9 @@
 import { IUserSummary } from "./user-summary.interface";
 
 export interface IUser extends IUserSummary {
-	status: string;
-	postsCount: number;
-	followersCount: number;
-	followingCount: number;
-	content?: string[];
+    status: string;
+    postsCount: number;
+    followersCount: number;
+    followingCount: number;
+    posts: string[];
 }
