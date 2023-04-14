@@ -1,55 +1,55 @@
 import { FC } from "react";
 import {
-    IoAddSharp,
-    AiOutlineTable,
-    BsBookmark,
-    CgProfile,
+	IoAddSharp,
+	AiOutlineTable,
+	BsBookmark,
+	CgProfile,
 } from "react-icons/all";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getUserByUsername } from "../../api";
 import Highlight from "../Highlight";
 import ProfileHeader from "../ProfileHeader";
-import ProfileContent from "../ProfileContent/index";
+import ProfilePosts from "../ProfilePosts/index";
 import NavigationItem from "../NavigationItem";
 import CircularPreloader from "../UI/CircularPreloader";
-import styles from "./ProfilePage.module.scss";
 import NotFound from "../NotFound";
+import styles from "./ProfilePage.module.scss";
 
 const navigationProfile = [
-    { icon: AiOutlineTable, title: "POSTS" },
-    { icon: BsBookmark, title: "SAVED" },
-    { icon: CgProfile, title: "TAGGED" },
+	{ icon: AiOutlineTable, title: "POSTS" },
+	{ icon: BsBookmark, title: "SAVED" },
+	{ icon: CgProfile, title: "TAGGED" },
 ];
 
 const ProfilePage: FC = () => {
-    const { username = "" } = useParams();
-    const { data, isLoading } = useQuery(["users", username], () =>
-        getUserByUsername(username)
-    );
+	const { username = "" } = useParams();
+	const { data, isLoading } = useQuery(["users", username], () =>
+		getUserByUsername(username)
+	);
 
-    if (isLoading) return <CircularPreloader />;
-    if (!data) return <NotFound />;
+	if (isLoading) return <CircularPreloader />;
+	if (!data) return <NotFound />;
 
-    return (
-        <div className={styles.profile}>
-            <ProfileHeader {...data} />
+	return (
+		<div className={styles.profile}>
+			<ProfileHeader {...data} />
 
-            <div className={styles.highlightList}>
-                <Highlight icon={IoAddSharp} text="New" />
-            </div>
-            <div className={styles.navigation}>
-                {navigationProfile.map((item, idx) => (
-                    <NavigationItem
-                        key={idx}
-                        navProfile={styles.navProfile}
-                        {...item}
-                    />
-                ))}
-            </div>
-            <ProfileContent posts={data.posts} />
-        </div>
-    );
+			<div className={styles.highlightList}>
+				<Highlight icon={IoAddSharp} text="New" />
+			</div>
+			<div className={styles.navigation}>
+				{navigationProfile.map((item, idx) => (
+					<NavigationItem
+						key={idx}
+						navProfile={styles.navProfile}
+						{...item}
+					/>
+				))}
+			</div>
+			<ProfilePosts posts={data.posts} />
+		</div>
+	);
 };
 
 export default ProfilePage;

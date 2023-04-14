@@ -4,31 +4,27 @@ import CommentForm from "../CommentForm";
 import PostActions from "../PostActions/PostActions";
 import HeaderPost from "./../HeaderPost";
 import styles from "./Post.module.scss";
-// import { useEffect } from "react";
-// import { useAppDispatch } from "../../redux/store";
-// import { setPost } from "../../redux/postSlice";
 
-interface PostProps {
-	post: IPost;
-}
+// interface PostProps {
+// 	post: IPost;
+// }
 
-const Post = ({ post }: PostProps) => {
-	const { avatar, username, description, likes } = post;
-	// const dispatch = useAppDispatch();
-	// useEffect(() => {
-	// 	dispatch(setPost(post));
-	// }, [username]);
+const Post = ({ authorProfile, description, image, likes }: IPost) => {
+	// const { description, likes, authorProfile, image } = post;
+
 	return (
 		<div className={styles.wrapper}>
-			<HeaderPost {...post} />
+			<HeaderPost authorProfile={authorProfile} />
 			<div className={styles.cover}>
-				<img src={avatar} alt="cover" />
+				<img src={image} alt="cover" />
 			</div>
-			<PostActions {...post} />
+			<PostActions {...authorProfile} />
 			<span>{likes} likes</span>
 			<p>
 				<span>
-					<Link to={`/${username}`}>{username}</Link>
+					<Link to={`/${authorProfile.username}`}>
+						{authorProfile.username}
+					</Link>
 				</span>
 				{description}
 			</p>

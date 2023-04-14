@@ -1,80 +1,81 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { BsThreeDots } from "react-icons/bs";
+import { getPostById } from "../../api";
 import CommentForm from "../CommentForm";
 import Modal from "../UI/Modal";
 import PostActions from "../PostActions";
-import Tooltip from "../UI/Tooltip";
 import ProfilePopup from "../ProfilePopup";
-import styles from "./PostModal.module.scss";
-import { BsThreeDots } from "react-icons/bs";
-import { useQuery } from "@tanstack/react-query";
-import { getPostById } from "../../api";
 import Spinner from "../UI/Spinner";
 import NotFound from "../NotFound";
-// import { useQuery } from "@tanstack/react-query";
-// import { getUserByUsername } from "../../api";
+import Popup from "../UI/Popup";
+import styles from "./PostModal.module.scss";
 
 const PostModal = () => {
-    const { id } = useParams();
+	const { id } = useParams();
+	const navigate = useNavigate();
 
-    const { data: post, isLoading } = useQuery(
-        ["posts", id],
-        () => getPostById(Number(id)),
-        { enabled: !!id }
-    );
+	const { data: post, isLoading } = useQuery(
+		["posts", id],
+		() => getPostById(Number(id)),
+		{ enabled: !!id }
+	);
+	console.log("id: ", id);
 
-    console.log(post);
+	if (isLoading) return <Spinner />;
+	if (!post) return <NotFound />;
 
-    const navigate = useNavigate();
+	return (
+		<div onClick={() => navigate("/")}>
+			<Modal
+				setOpenModal={() => navigate("/")}
+				background="black"
+				// sizeModal={styles.sizeModal}
+			>
+				<div className={styles.wrapper}>
+					<div className={styles.postImg}>
+						<img src={post.image} alt="avatar" />
+					</div>
+					<div className={styles.modalContent}>
+						<div className={styles.post}>
+							<Popup
+								content={
+									<ProfilePopup {...post.authorProfile} />
+								}
+							>
+								<Link to={`/${post.authorProfile.username}`}>
+									<div className={styles.avatar}>
+										<img
+											src={post.authorProfile.avatar}
+											alt="avatar"
+										/>
+										<span>
+											{post.authorProfile.username}
+										</span>
+									</div>
+								</Link>
+							</Popup>
+							<BsThreeDots />
+						</div>
 
-    if (isLoading) return <Spinner />;
-    if (!post) return <NotFound />;
+						<div className={styles.noComments}>
+							<h3>No comments yet.</h3>
+							<p>Start the conversation.</p>
+						</div>
 
-    return (
-        <div onClick={() => navigate("/")}>
-            <Modal
-                setOpenModal={() => navigate("/")}
-                background="black"
-                // sizeModal={styles.sizeModal}
-            >
-                <div className={styles.wrapper}>
-                    <div className={styles.postImg}>
-                        <img src={post.avatar} alt="avatar" />
-                    </div>
-                    <div className={styles.modalContent}>
-                        <h1>Hello</h1>
-                        <div className={styles.post}>
-                            <Tooltip
-                                content={
-                                    <ProfilePopup {...post.authorProfile} />
-                                }
-                            >
-                                <Link to={`/${post.username}`}>
-                                    <div className={styles.avatar}>
-                                        <img
-                                            src={post.authorProfile.avatar}
-                                            alt="avatar"
-                                        />
-                                        <span>{post.username}</span>
-                                    </div>
-                                </Link>
-                            </Tooltip>
-                            <BsThreeDots />
-                        </div>
-
-                        <div className={styles.footerModal}>
-                            <PostActions
-                                avatar={post.authorProfile.avatar}
-                                id={post.id}
-                                username={post.username}
-                            />
-                            <CommentForm />
-                        </div>
-                    </div>
-                </div>
-            </Modal>
-        </div>
-    );
+						<div className={styles.footerModal}>
+							<PostActions
+								avatar={post.authorProfile.avatar}
+								id={post.authorProfile.id}
+								username={post.authorProfile.username}
+							/>
+							<CommentForm />
+						</div>
+					</div>
+				</div>
+			</Modal>
+		</div>
+	);
 };
 
 export default PostModal;

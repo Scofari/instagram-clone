@@ -1,4 +1,4 @@
-.content {
+.posts {
 	height: auto;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -7,4 +7,10 @@
 	grid-row-gap: 2px;
 
 	padding-bottom: 60px;
+
+	img {
+		height: 300px;
+		width: 300px;
+		object-fit: cover;
+	}
 }

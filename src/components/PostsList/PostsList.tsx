@@ -16,7 +16,9 @@ const PostsList: FC = () => {
 					<PostSkeleton />
 				</>
 			) : (
-				data.map((post: IPost) => <Post post={post} key={post.id} />)
+				data.map((post: IPost) => (
+					<Post {...post} key={post.authorProfile.id} />
+				))
 			)}
 		</div>
 	);

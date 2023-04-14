@@ -1,25 +1,22 @@
-.tooltipWrapper {
-    // &:hover .tooltip {
-    // 	display: block;
-    // }
+.popupWrapper {
+	position: relative;
 
-    position: relative;
-}
+	.popup {
+		// display: none;
+		padding: 20px 0;
+		position: absolute;
+		top: 30px;
+		left: 12px;
+		background-color: #000;
+		color: #fff;
+		// width: max-content;
+		border-radius: 10px;
+		z-index: 100000;
 
-.tooltip {
-    // display: none;
-    position: absolute;
-    top: 30px;
-    left: 12px;
-    background-color: #000;
-    color: #fff;
-    padding: 0.4rem 0.8rem;
-    width: max-content;
-    z-index: 100000;
-
-    .tooltipContent {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #c5c5c5;
-    }
+		.popuppContent {
+			font-size: 1.2rem;
+			font-weight: 400;
+			color: #c5c5c5;
+		}
+	}
 }
