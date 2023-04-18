@@ -1,75 +1,75 @@
 .container {
-	.actionBtns {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-	}
-	.avatar {
-		margin-bottom: 15px;
-		img {
-			width: 50px;
-			height: 50px;
-		}
+    .actionBtns {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .avatar {
+        margin-bottom: 15px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
 
-		span {
-			font-weight: bold;
-			font-size: 15px;
-		}
-	}
+        span {
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
 
-	ul {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		li {
-			display: flex;
-			flex-direction: column;
-			cursor: pointer;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        li {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
 
-			span {
-				line-height: 2;
-				text-align: center;
-				font-weight: bold;
-			}
-		}
-	}
+            span {
+                line-height: 2;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
 
-	.posts {
-		margin: 15px 0;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(auto, 1fr);
-		grid-column-gap: 5px;
-		grid-row-gap: 2px;
+    .posts {
+        margin: 15px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 2px;
 
-		img {
-			height: 120px;
-			width: 120px;
-			object-fit: cover;
-		}
-	}
+        img {
+            height: 120px;
+            width: 120px;
+            object-fit: cover;
+        }
+    }
 }
 
 .avatar {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-	img {
-		height: 30px;
-		width: 30px;
-		margin-left: 10px;
-		border-radius: 50%;
-		object-fit: cover;
-		cursor: pointer;
-	}
+    img {
+        height: 30px;
+        width: 30px;
+        margin-left: 10px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+    }
 
-	span {
-		text-decoration: none;
-		font-weight: bold;
+    span {
+        text-decoration: none;
+        font-weight: bold;
 
-		&:hover {
-			opacity: 0.5;
-		}
-	}
+        &:hover {
+            opacity: 0.5;
+        }
+    }
 }

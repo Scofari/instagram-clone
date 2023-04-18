@@ -1,28 +1,52 @@
 .form {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 2rem;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 
-	input {
-		border: transparent;
-		background: transparent;
-		outline: none;
-		width: 100%;
-		padding-right: 2rem;
-		font-size: 14px;
+    .commentForm {
+        margin-top: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 15px;
 
-		&::placeholder {
-			color: #9a9a9a;
-		}
-	}
+        svg {
+            margin-right: 15px;
+        }
+    }
 
-	svg {
-		cursor: pointer;
+    span {
+        color: #538fff;
+        font-weight: bold;
+        margin-right: 10px;
+        cursor: pointer;
 
-		&:hover {
-			opacity: 0.5;
-		}
-	}
+        &:hover {
+            color: white;
+        }
+    }
+
+    input {
+        border: transparent;
+        background: transparent;
+        outline: none;
+        width: 100%;
+        padding-right: 2rem;
+        font-size: 14px;
+
+        &::placeholder {
+            color: #9a9a9a;
+        }
+    }
+
+    svg {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
 }

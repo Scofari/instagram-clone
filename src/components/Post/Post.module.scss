@@ -1,31 +1,30 @@
 .wrapper {
-	width: 470px;
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 20px;
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-	.cover img {
-		object-fit: contain;
-		max-height: 600px;
-		width: 100%;
-	}
+    .cover img {
+        object-fit: contain;
+        max-height: 600px;
+        width: 100%;
+    }
 
-	span {
-		font-weight: 600;
-		cursor: pointer;
-	}
+    span {
+        font-weight: 600;
+        cursor: pointer;
+    }
 
+    p {
+        padding-top: 1rem;
+        span {
+            margin-right: 1rem;
 
-	p {
-		padding: 1rem 0;
-
-		span {
-			margin-right: 1rem;
-
-			a {
-				text-decoration: none;
-			}
-		}
-	}
-
+            a {
+                text-decoration: none;
+            }
+        }
+    }
 }

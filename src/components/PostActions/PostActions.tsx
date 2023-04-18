@@ -1,45 +1,41 @@
 import { FC, useState } from "react";
-import { FiHeart, BsChat, FiSend, BsBookmark } from "react-icons/all";
+import { Link, useNavigate } from "react-router-dom";
+import { FiHeart, BsChat, FiBookmark } from "react-icons/all";
 import Tooltip from "../UI/Tooltip";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "../../redux/store";
-import { setIsLiked } from "../../redux/postSlice";
 import { IUserSummary } from "../../types/user-summary.interface";
 import styles from "./PostActions.module.scss";
+import Share from "../Share";
 
 interface PostActionsProps extends IUserSummary {}
 
 const PostActions: FC<PostActionsProps> = ({ id }) => {
-	console.log("id: ", id);
-	const isLiked = useSelector((state: RootState) => state.post.isLiked);
-	const navigate = useNavigate();
-	const dispatch = useAppDispatch();
-	const toggleLike = () => {
-		dispatch(setIsLiked());
-	};
+    const [isLiked, setIsLiked] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
+    const navigate = useNavigate();
 
-	return (
-		<div className={styles.actions}>
-			<Tooltip content={isLiked ? "Unlike" : "Like"}>
-				<FiHeart
-					onClick={toggleLike}
-					className={isLiked ? styles.heart : ""}
-				/>
-			</Tooltip>
-			<span onClick={() => navigate(`/p/${id}`)}>
-				<Tooltip content="Comment">
-					<BsChat />
-				</Tooltip>
-			</span>
-			<Tooltip content="Share Post">
-				<FiSend />
-			</Tooltip>
-			<Tooltip content="Save">
-				<BsBookmark />
-			</Tooltip>
-		</div>
-	);
+    return (
+        <div className={styles.actions}>
+            <Tooltip content={isLiked ? "Unlike" : "Like"}>
+                <FiHeart
+                    onClick={() => setIsLiked(!isLiked)}
+                    className={isLiked ? styles.heart : ""}
+                />
+            </Tooltip>
+            <span onClick={() => navigate(`/p/${id}`)}>
+                <Tooltip content="Comment">
+                    <BsChat />
+                </Tooltip>
+            </span>
+            <Share />
+
+            <Tooltip content={isSaved ? "Remove" : "Save"}>
+                <FiBookmark
+                    onClick={() => setIsSaved(!isSaved)}
+                    className={isSaved ? styles.bookMark : ""}
+                />
+            </Tooltip>
+        </div>
+    );
 };
 
 export default PostActions;

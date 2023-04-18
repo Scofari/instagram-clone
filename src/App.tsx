@@ -14,6 +14,8 @@ import Profile from "./components/ProfilePage";
 import PostModal from "./components/PostModal";
 import InitialLoadingPage from "./components/InitialLoadingPage";
 import "./App.module.scss";
+import ProfilePage from "./components/ProfilePage";
+import Share from "./components/Share";
 
 const App: FC = () => {
     const dispatch = useAppDispatch();
@@ -21,6 +23,7 @@ const App: FC = () => {
         ["auth"],
         getCurrentUser
     );
+    console.log("🚀 ~ file: App.tsx:57 ~ currentUser:", currentUser);
 
     useEffect(() => {
         if (currentUser) {
@@ -38,7 +41,11 @@ const App: FC = () => {
                     <Route path="/direct/inbox" element={<Messages />} />
                     <Route path="/explore" element={<Explore />} />
                     <Route path="/reels" element={<Reels />} />
-                    <Route path="/:username" element={<Profile />} />
+                    <Route path="/:username/*" element={<Profile />}>
+                        {/* <Route path="saved" element={<Share />} />
+                        <Route path="tagged" element={<Profile />} /> */}
+                    </Route>
+
                     <Route path="/p/:id" element={<PostModal />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>

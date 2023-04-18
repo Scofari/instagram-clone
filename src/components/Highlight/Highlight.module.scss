@@ -1,52 +1,49 @@
 .highlight {
-	width: 120px;
-	height: auto;
-	padding: 0 15px 15px;
-	cursor: pointer;
+    width: 120px;
+    height: auto;
+    padding: 0 15px 15px;
+    cursor: pointer;
 
-	.circle {
-		width: 90px;
-		height: 90px;
-		margin-bottom: 10px;
-		border-radius: 50%;
-		border: 1px solid #414141;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+    .circle {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        border: 1px solid #414141;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-		svg {
-			width: 80px;
-			height: 80px;
-			background-color: #191919;
-			border-radius: 50%;
-			padding: 10px;
-			fill: #686868;
-			stroke: #686868;
-			font-size: 60px;
-		}
-	}
+        svg {
+            width: 80px;
+            height: 80px;
+            background-color: #191919;
+            border-radius: 50%;
+            padding: 10px;
+            padding-bottom: 0;
+            fill: #686868;
+            stroke: #686868;
+            font-size: 60px;
+        }
+    }
 
-	span {
-		margin-left: 30px;
-		font-size: 12px;
-		font-weight: 500;
-	}
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+        font-weight: 500;
+    }
 }
 
 .modalContent {
-	animation: show 800ms ease-in-out;
-}
-
-.sizeModal {
-	width: 400px;
-	height: 170px;
+    width: 400px;
+    animation: show 800ms ease-in-out;
 }
 
 @keyframes show {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

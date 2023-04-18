@@ -1,10 +1,10 @@
 import { IoIosSettings } from "react-icons/io";
+import { useSelector } from "react-redux";
 import Button from "./../UI/Button";
 import Tooltip from "../UI/Tooltip";
-import styles from "./ProfileHeader.module.scss";
 import { IUser } from "../../types/user.interface";
-import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import styles from "./ProfileHeader.module.scss";
 
 const ProfileHeader = ({
     avatar,
@@ -31,11 +31,11 @@ const ProfileHeader = ({
                 <div className={styles.editProfile}>
                     <h2>{username}</h2>
                     {isMyProfile ? (
-                        <Button variant="secondary" text={"Edit profile"} />
+                        <Button variant="secondary">Edit profile</Button>
                     ) : (
                         <>
-                            <Button variant="primary" text={"Follow"} />
-                            <Button variant="secondary" text="Message" />
+                            <Button variant="primary">Follow</Button>
+                            <Button variant="secondary">Message</Button>
                         </>
                     )}
 

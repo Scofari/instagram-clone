@@ -9,51 +9,51 @@ import SuggestedFollowerSkeleton from "../SuggestedFollower/SuggestedFollowerSke
 import styles from "./SuggestedFollowers.module.scss";
 
 const SuggestedFollowers: FC = () => {
-	const { data: followers = [], isLoading } = useQuery(
-		["suggested-followers"],
-		getSuggestedFollowers
-	);
+    const { data: followers = [], isLoading } = useQuery(
+        ["suggested-followers"],
+        getSuggestedFollowers
+    );
 
-	const getSuggestedFollowerDescription = ({
-		followedBy,
-		followsYou,
-	}: ISuggestedFollower) => {
-		if (followsYou) return "Follows you";
-		if (followedBy.length) return `Followed by ${followedBy.join(",")}`;
+    const getSuggestedFollowerDescription = ({
+        followedBy,
+        followsYou,
+    }: ISuggestedFollower) => {
+        if (followsYou) return "Follows you";
+        if (followedBy.length) return `Followed by ${followedBy.join(",")}`;
 
-		return "Suggested for you";
-	};
+        return "Suggested for you";
+    };
 
-	const suggestedFollowerSkeleton = [...new Array(5)].map((_, idx) => (
-		<SuggestedFollowerSkeleton key={idx} />
-	));
+    const suggestedFollowerSkeleton = [...new Array(5)].map((_, idx) => (
+        <SuggestedFollowerSkeleton key={idx} />
+    ));
 
-	return (
-		<div className={styles.suggestedFollowers}>
-			<SwitchAccounts />
-			<div className={styles.suggestions}>
-				<span>Suggestions for you</span>
-				<a href="#">See All</a>
-			</div>
-			{isLoading
-				? suggestedFollowerSkeleton
-				: followers.map((follower) => {
-						const { username, id } = follower;
-						return (
-							<SuggestedFollower
-								key={id}
-								to={username}
-								description={getSuggestedFollowerDescription(
-									follower
-								)}
-								{...follower}
-							/>
-						);
-				  })}
+    return (
+        <div className={styles.suggestedFollowers}>
+            <SwitchAccounts />
+            <div className={styles.suggestions}>
+                <span>Suggestions for you</span>
+                <a href="#">See All</a>
+            </div>
+            {isLoading
+                ? suggestedFollowerSkeleton
+                : followers.map((follower) => {
+                      const { username, id } = follower;
+                      return (
+                          <SuggestedFollower
+                              key={id}
+                              to={username}
+                              description={getSuggestedFollowerDescription(
+                                  follower
+                              )}
+                              {...follower}
+                          />
+                      );
+                  })}
 
-			<SuggestedFollowersFooter />
-		</div>
-	);
+            <SuggestedFollowersFooter />
+        </div>
+    );
 };
 
 export default SuggestedFollowers;
