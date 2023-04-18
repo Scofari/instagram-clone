@@ -1,101 +1,102 @@
 .wrapper {
-    display: flex;
-    height: 95vh;
-    width: 1500px;
-    .postImg {
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+	display: flex;
+	justify-content: center;
+	height: 95vh;
+	width: 1400px;
+	.postImg {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 }
 
 .modalContent {
-    padding: 0 16px;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
+	padding: 0 16px;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
 
-    .noComments {
-        position: relative;
-        top: 40%;
+	.noComments {
+		position: relative;
+		top: 40%;
 
-        h3 {
-            font-size: 25px;
-            line-height: 2;
-        }
-    }
-    .footerModal {
-        margin-top: auto;
-        display: flex;
-        flex-direction: column;
+		h3 {
+			font-size: 25px;
+			line-height: 2;
+		}
+	}
+	.footerModal {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
 
-        &::before {
-            margin: 5px -10px 0;
-            content: "";
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
+		&::before {
+			margin: 5px -10px 0;
+			content: "";
+			border-top: 1px solid rgba(255, 255, 255, 0.2);
+		}
 
-        span,
-        time {
-            align-self: start;
-        }
+		span,
+		time {
+			align-self: start;
+		}
 
-        time {
-            font-size: 13px;
-            color: #afafaf;
-        }
-    }
+		time {
+			font-size: 13px;
+			color: #afafaf;
+		}
+	}
 }
 
 .post {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-    a {
-        text-decoration: none;
-    }
+	a {
+		text-decoration: none;
+	}
 
-    .avatar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+	.avatar {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 
-        img {
-            height: 30px;
-            width: 30px;
-            margin-left: 10px;
-            border-radius: 50%;
-            object-fit: cover;
-            cursor: pointer;
-        }
+		img {
+			height: 30px;
+			width: 30px;
+			margin-left: 10px;
+			border-radius: 50%;
+			object-fit: cover;
+			cursor: pointer;
+		}
 
-        span {
-            text-decoration: none;
-            font-weight: bold;
+		span {
+			text-decoration: none;
+			font-weight: bold;
 
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-    }
-    svg {
-        margin-left: auto;
-        font-size: 2rem;
-        cursor: pointer;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	svg {
+		margin-left: auto;
+		font-size: 2rem;
+		cursor: pointer;
 
-        &:hover {
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			opacity: 0.5;
+		}
+	}
 }
 
 .sizeModal {
-    background-color: black;
-    width: 45vw;
-    height: 95vh;
+	background-color: black;
+	width: 45vw;
+	height: 95vh;
 }
