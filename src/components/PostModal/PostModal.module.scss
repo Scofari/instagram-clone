@@ -2,13 +2,45 @@
 	display: flex;
 	justify-content: center;
 	height: 95vh;
-	width: 1400px;
+	width: 70vw;
+	position: relative;
 	.postImg {
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	.arrowRight,
+	.arrowLeft {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #fff;
+		position: absolute;
+		right: -200px;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			background-color: #adadad;
+		}
+		svg {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			stroke: white;
+			fill: #666666;
+			cursor: pointer;
+		}
+	}
+
+	.arrowLeft {
+		left: -200px;
 	}
 }
 

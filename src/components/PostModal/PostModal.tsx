@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { BsThreeDots } from "react-icons/bs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import {
+	BsThreeDots,
+	RiArrowLeftSLine,
+	RiArrowRightSLine,
+} from "react-icons/all";
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { getPostById } from "../../api";
 import CommentForm from "../CommentForm";
 import Modal from "../UI/Modal";
@@ -11,11 +16,14 @@ import ProfilePopup from "../ProfilePopup";
 import Spinner from "../UI/Spinner";
 import NotFound from "../NotFound";
 import Popup from "../UI/Popup";
+import OptionsModal from "../UI/OptionsModal";
+import Tooltip from "../UI/Tooltip";
 import styles from "./PostModal.module.scss";
 
 dayjs.extend(relativeTime);
 
 const PostModal = () => {
+	const [openPostModal, setOpenPostModal] = useState(false);
 	const { id } = useParams();
 	const navigate = useNavigate();
 
@@ -36,7 +44,10 @@ const PostModal = () => {
 			<Modal setOpenModal={() => navigate("/")} background="black">
 				<div className={styles.wrapper}>
 					<div className={styles.postImg}>
-						<img src={post.image} alt="avatar" />
+						<img
+							src={post.image}
+							alt={post.authorProfile.username}
+						/>
 					</div>
 					<div className={styles.modalContent}>
 						<div className={styles.post}>
@@ -49,7 +60,7 @@ const PostModal = () => {
 									<div className={styles.avatar}>
 										<img
 											src={post.authorProfile.avatar}
-											alt="avatar"
+											alt={post.authorProfile.username}
 										/>
 										<span>
 											{post.authorProfile.username}
@@ -57,7 +68,9 @@ const PostModal = () => {
 									</div>
 								</Link>
 							</Popup>
-							<BsThreeDots />
+							<BsThreeDots
+								onClick={() => setOpenPostModal(true)}
+							/>
 						</div>
 
 						<div className={styles.noComments}>
@@ -78,8 +91,20 @@ const PostModal = () => {
 							<CommentForm isModalOpen />
 						</div>
 					</div>
+
+					<div className={styles.arrowRight}>
+						<Tooltip content="Next">
+							<RiArrowRightSLine />
+						</Tooltip>
+					</div>
+					<div className={styles.arrowLeft}>
+						<Tooltip content="Next">
+							<RiArrowLeftSLine />
+						</Tooltip>
+					</div>
 				</div>
 			</Modal>
+			{openPostModal && <OptionsModal setOpenModal={setOpenPostModal} />}
 		</div>
 	);
 };
