@@ -3,23 +3,23 @@ import { IUser } from "../types/user.interface";
 import { ISuggestedFollower } from "../types/suggested-follower.interface";
 
 export const getAllUsers = async () => {
-    const { data } = await axiosInstance.get<IUser[]>("/users");
+	const { data } = await axiosInstance.get<IUser[]>("/users");
 
-    return data;
+	return data;
 };
 
 export const getUserByUsername = async (username: string) => {
-    const { data } = await axiosInstance.get<IUser[]>("/users", {
-        params: { username },
-    });
+	const { data } = await axiosInstance.get<IUser[]>("/users", {
+		params: { username },
+	});
 
-    return data[0];
+	return data[0];
 };
 
 export const getSuggestedFollowers = async () => {
-    const { data } = await axiosInstance.get<ISuggestedFollower[]>(
-        "/suggested-followers"
-    );
+	const { data } = await axiosInstance.get<ISuggestedFollower[]>(
+		"/suggested-followers"
+	);
 
-    return data;
+	return data;
 };

@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Tooltip from "../Tooltip";
 import styles from "./Modal.module.scss";
 
@@ -18,6 +18,20 @@ const Modal = ({
 	background = "gray",
 	isDefaultClose,
 }: ModalProps) => {
+	useEffect(() => {
+		const onEscPress = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				setOpenModal(false);
+			}
+		};
+
+		document.addEventListener("keyup", onEscPress);
+
+		return () => {
+			document.removeEventListener("keyup", onEscPress);
+		};
+	}, [setOpenModal]);
+
 	return ReactDOM.createPortal(
 		<div className={styles.overlay} onClick={() => setOpenModal(false)}>
 			<span

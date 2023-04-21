@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import { Link } from "react-router-dom";
 import { IUserPost } from "../../types/user.interface";
 import styles from "./ProfilePosts.module.scss";

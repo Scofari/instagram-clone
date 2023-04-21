@@ -21,7 +21,16 @@ const SuggestedFollower: FC<SuggestedFollowerProps> = ({
 
 	return (
 		<div className={styles.follower}>
-			<Popup content={<ProfilePopup {...authorProfile} isSuggested />}>
+			<Popup
+				content={
+					<ProfilePopup
+						{...authorProfile}
+						isSuggested
+						isFollowing={isFollowing}
+						setIsFollowing={setIsFollowing}
+					/>
+				}
+			>
 				<Link to={to}>
 					<header className={styles.followerInfo}>
 						<img src={avatar} alt="avatar" />

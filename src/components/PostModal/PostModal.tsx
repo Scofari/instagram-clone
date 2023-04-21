@@ -18,11 +18,18 @@ import NotFound from "../NotFound";
 import Popup from "../UI/Popup";
 import OptionsModal from "../UI/OptionsModal";
 import Tooltip from "../UI/Tooltip";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import styles from "./PostModal.module.scss";
 
 dayjs.extend(relativeTime);
 
 const PostModal = () => {
+	// const [index, setIndex] = useState(0);
+
+	const userPosts = useSelector((state: RootState) => state.post.posts);
+	console.log("userPosts: ", userPosts);
+
 	const [openPostModal, setOpenPostModal] = useState(false);
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -39,6 +46,25 @@ const PostModal = () => {
 	const date = dayjs(post.dateTime);
 	const relativeDate = date.fromNow();
 	const dateTooltip = date.format("MMM DD, YYYY");
+
+	// const checkNumber = (number: number) => {
+	// 	if (number > posts.length - 1) return 0;
+	// 	if (number < 0) return posts.length - 1;
+	// };
+
+	// const prevPost = () => {
+	// 	setIndex((index) => {
+	// 		let newIndex = index + 1;
+	// 		return checkNumber(newIndex);
+	// 	});
+	// };
+	// const nextPost = () => {
+	// 	setIndex((index) => {
+	// 		let newIndex = index - 1;
+	// 		return checkNumber(newIndex);
+	// 	});
+	// };
+
 	return (
 		<div onClick={() => navigate("/")}>
 			<Modal setOpenModal={() => navigate("/")} background="black">

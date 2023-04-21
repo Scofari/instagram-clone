@@ -1,36 +1,51 @@
 .profile {
-    padding-top: 40px;
-    width: 900px;
-    min-height: 100vh;
+	padding-top: 40px;
+	width: 900px;
+	min-height: 100vh;
 
-    .navigation {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 20px 0;
+	.navigation {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 60px;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		padding: 20px 0;
 
-        .navItem {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            gap: 5px;
+		.navItem {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			gap: 5px;
+			position: relative;
 
-            .navProfile {
-                color: #a3a3a3;
-                letter-spacing: 1px;
-                font-size: 12px;
-                margin-right: 5px;
-            }
-        }
-    }
+			.navProfile {
+				color: #a3a3a3;
+				letter-spacing: 1px;
+				font-size: 12px;
+				margin-right: 5px;
+			}
+		}
+	}
 
-    .highlightList {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 45px;
-    }
+	.highlightList {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 45px;
+	}
+}
+
+.active {
+	a li {
+		color: white;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: -21px;
+		width: 40px;
+		height: 1px;
+		background-color: #fff;
+	}
 }

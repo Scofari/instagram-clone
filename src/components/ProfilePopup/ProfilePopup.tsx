@@ -7,6 +7,8 @@ import styles from "./ProfilePopup.module.scss";
 
 interface ProfilePopupProps extends IAuthorProfile {
 	isSuggested?: boolean;
+	isFollowing?: boolean;
+	setIsFollowing?: (x: boolean) => void;
 }
 
 const ProfilePopup: FC<ProfilePopupProps> = ({
@@ -17,6 +19,8 @@ const ProfilePopup: FC<ProfilePopupProps> = ({
 	postsCount,
 	latestPosts,
 	isSuggested,
+	isFollowing,
+	setIsFollowing,
 }) => {
 	return (
 		<div className={styles.container}>
@@ -63,11 +67,12 @@ const ProfilePopup: FC<ProfilePopupProps> = ({
 					</>
 				) : (
 					<Button
-						icon={MdOutlinePersonAdd}
+						icon={!isFollowing ? MdOutlinePersonAdd : undefined}
 						size="large"
-						variant="primary"
+						variant={isFollowing ? "secondary" : "primary"}
+						onClick={() => setIsFollowing?.(!isFollowing)}
 					>
-						Follow
+						{isFollowing ? "Following" : "Follow"}
 					</Button>
 				)}
 			</div>
