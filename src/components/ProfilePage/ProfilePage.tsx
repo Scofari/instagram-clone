@@ -72,11 +72,6 @@ const ProfilePage: FC = () => {
 							className={`${styles.navItem} ${
 								idx === value && styles.active
 							}`}
-							// className={({ isActive }: any) =>
-							// 	isActive
-							// 		? `${styles.navItem} ${styles.active}`
-							// 		: styles.navItem
-							// }
 						>
 							<Icon />
 							<li className={styles.navProfile}>{title}</li>

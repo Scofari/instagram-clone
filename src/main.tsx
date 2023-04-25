@@ -1,4 +1,4 @@
-// import { StrictMode } from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
@@ -12,16 +12,14 @@ import "./index.css";
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	// <StrictMode>
-	<BrowserRouter>
-		<Provider store={store}>
-			<QueryClientProvider client={queryClient}>
-				<App />
-				<ReactQueryDevtools />
-			</QueryClientProvider>
-		</Provider>
-	</BrowserRouter>
-	// </StrictMode>
+	<StrictMode>
+		<BrowserRouter>
+			<Provider store={store}>
+				<QueryClientProvider client={queryClient}>
+					<App />
+					<ReactQueryDevtools />
+				</QueryClientProvider>
+			</Provider>
+		</BrowserRouter>
+	</StrictMode>
 );
-
-//

@@ -2,20 +2,20 @@ import { useState } from "react";
 import styles from "./HighlightInput.module.scss";
 
 const HighlightInput = () => {
-	const [searchValue, setSearchValue] = useState("");
+	const [value, setValue] = useState("");
 
 	return (
 		<div className={styles.highlightInput}>
 			<div className={styles.wrapper}>
 				<input
 					type="text"
-					value={searchValue}
+					value={value}
 					placeholder="Highlight Name"
-					onChange={(e) => setSearchValue(e.target.value)}
+					onChange={(e) => setValue(e.target.value)}
 				/>
 			</div>
 
-			<button disabled={!searchValue && true}>Next</button>
+			<button disabled={!value && true}>Next</button>
 		</div>
 	);
 };

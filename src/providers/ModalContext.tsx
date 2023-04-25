@@ -1,26 +1,12 @@
-// import {
-// 	createContext,
-// 	ReactNode,
-// 	useState,
-// 	Dispatch,
-// 	SetStateAction,
-// } from "react";
+// import { createContext, useState } from "react";
+// import { IModalContext, Props } from "./ModalContextTypes";
 
-// export interface IContext {
-// 	openModal: boolean;
-// 	setOpenModal: Dispatch<SetStateAction<boolean>>;
-// }
-
-// type ModalContextProps = {
-// 	children: ReactNode;
-// };
-
-// export const ModalContext = createContext<IContext>({
+// export const ModalContext = createContext<IModalContext>({
 // 	openModal: false,
 // 	setOpenModal: () => {},
 // });
 
-// const ModalProvider = ({ children }: ModalContextProps) => {
+// const ModalProvider = ({ children }: Props) => {
 // 	const [openModal, setOpenModal] = useState(false);
 
 // 	return (
