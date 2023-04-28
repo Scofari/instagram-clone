@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -18,19 +18,23 @@ import NotFound from "../NotFound";
 import Popup from "../UI/Popup";
 import OptionsModal from "../UI/OptionsModal";
 import Tooltip from "../UI/Tooltip";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { getLocalStorage } from "../Post/Post";
+import CommentList from "../CommentList";
 import styles from "./PostModal.module.scss";
 
 dayjs.extend(relativeTime);
 
 const PostModal = () => {
 	// const [index, setIndex] = useState(0);
-
-	const userPosts = useSelector((state: RootState) => state.post.posts);
-	console.log("userPosts: ", userPosts);
-
+	const [viewAllComments, setViewAllComments] = useState(false);
+	const [comment, setComment] = useState("");
+	const [comments, setComments] = useState<string[]>(getLocalStorage());
 	const [openPostModal, setOpenPostModal] = useState(false);
+
+	useEffect(() => {
+		localStorage.setItem("comments", JSON.stringify(comments));
+	}, [comments]);
+
 	const { id } = useParams();
 	const navigate = useNavigate();
 
@@ -99,10 +103,20 @@ const PostModal = () => {
 							/>
 						</div>
 
-						<div className={styles.noComments}>
-							<h3>No comments yet.</h3>
-							<p>Start the conversation.</p>
-						</div>
+						{comments ? (
+							<div className={styles.commentList}>
+								<CommentList
+									comments={comments}
+									setViewAllComments={setViewAllComments}
+									viewAllComments={viewAllComments}
+								/>
+							</div>
+						) : (
+							<div className={styles.noComments}>
+								<h3>No comments yet.</h3>
+								<p>Start the conversation.</p>
+							</div>
+						)}
 
 						<div className={styles.footerModal}>
 							<PostActions
@@ -114,7 +128,13 @@ const PostModal = () => {
 							<time dateTime={post.dateTime} title={dateTooltip}>
 								{relativeDate}
 							</time>
-							<CommentForm isModalOpen />
+							<CommentForm
+								isModalOpen
+								comment={comment}
+								comments={comments}
+								setComment={setComment}
+								setComments={setComments}
+							/>
 						</div>
 					</div>
 

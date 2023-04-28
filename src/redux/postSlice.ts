@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IPost } from "../types/post.interface";
+import { IProfilePost } from "./../types/profile-post.interface";
 
 export interface PostState {
-	posts: IPost[] | null;
+	posts: IProfilePost[] | null;
 }
 
 const initialState: PostState = {
@@ -15,10 +15,18 @@ export const postSlice = createSlice({
 	reducers: {
 		setPosts(state, action) {
 			state.posts = action.payload;
-			console.log("action.payload: ", action.payload);
+		},
+		deletePost(state, action) {
+			if (state.posts)
+				state.posts = state.posts.filter((post) => {
+					return post.id !== action.payload;
+				});
+		},
+		deleteAllPosts(state) {
+			state.posts = [];
 		},
 	},
 });
 
-export const { setPosts } = postSlice.actions;
+export const { setPosts, deletePost, deleteAllPosts } = postSlice.actions;
 export default postSlice.reducer;

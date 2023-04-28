@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IUserSummary } from "../types/user-summary.interface";
 import { ISuggestedFollower } from "../types/suggested-follower.interface";
 import { IAuthenticate } from "../types/authenticate.interface";
 

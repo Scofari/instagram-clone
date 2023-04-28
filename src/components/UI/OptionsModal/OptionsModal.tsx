@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal";
+import { useAppDispatch } from "../../../redux/store";
+import { deleteAllPosts, deletePost } from "../../../redux/postSlice";
 import styles from "./OptionModal.module.scss";
 
 const myProfileOptions = [
@@ -26,10 +28,10 @@ const postOptions = [
 	"Cancel",
 ];
 
-const data2 = ["Delete", "Cancel"];
+const cancelDataOptions = ["Delete", "Cancel"];
 
 interface OptionsModalProps {
-	setOpenModal?: (x: boolean) => void;
+	setOpenModal?: React.Dispatch<React.SetStateAction<boolean>>;
 	isPostOptions?: boolean;
 }
 
@@ -37,16 +39,24 @@ const OptionsModal = ({ setOpenModal, isPostOptions }: OptionsModalProps) => {
 	const defaultOptions = isPostOptions ? postOptions : myProfileOptions;
 	const [initialData, setInitialData] = useState(defaultOptions);
 	const [openCloseModal, setOpenCloseModal] = useState(false);
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 
-	const onClickHandlerOptions = (item: string) => {
+	const onClickHandlerOptions = (item: string, id?: number) => {
 		switch (item) {
 			case "Delete":
 				setInitialData([]);
 				setOpenCloseModal(true);
+				if (id !== undefined) {
+					dispatch(deletePost(id));
+					navigate(-1);
+				}
+
 				break;
 
 			case "Cancel":
 				setOpenModal?.(false);
+				break;
 
 			default:
 				break;
@@ -77,10 +87,10 @@ const OptionsModal = ({ setOpenModal, isPostOptions }: OptionsModalProps) => {
 									</span>
 								</div>
 								<ul>
-									{data2.map((item, idx) => (
+									{cancelDataOptions.map((item, idx) => (
 										<li
 											onClick={() =>
-												onClickHandlerOptions(item)
+												onClickHandlerOptions(item, 1)
 											}
 											key={idx}
 										>

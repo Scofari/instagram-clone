@@ -1,12 +1,13 @@
 import { FC, useEffect, useState } from "react";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import {
 	IoAddSharp,
 	AiOutlineTable,
 	BsBookmark,
 	CgProfile,
 } from "react-icons/all";
-import { NavLink, Outlet, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { IconType } from "react-icons/lib";
 import { getUserByUsername } from "../../api";
 import Highlight from "../Highlight";
 import ProfileHeader from "../ProfileHeader";
@@ -16,7 +17,6 @@ import NotFound from "../NotFound";
 import { useAppDispatch } from "../../redux/store";
 import { setPosts } from "../../redux/postSlice";
 import styles from "./ProfilePage.module.scss";
-import { IconType } from "react-icons/lib";
 
 interface NavigationProfile {
 	icon: IconType;
@@ -31,18 +31,17 @@ const navigationProfile: NavigationProfile[] = [
 
 const ProfilePage: FC = () => {
 	const [value, setValue] = useState(0);
-	const dispatch = useAppDispatch();
 	const { username = "" } = useParams();
-	console.log("username: ", username);
 	const { data: user, isLoading } = useQuery(["users", username], () =>
 		getUserByUsername(username)
 	);
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		if (user) {
-			dispatch(setPosts(user));
+			dispatch(setPosts(user.posts));
 		}
-	}, []);
+	}, [user]);
 
 	if (isLoading) return <CircularPreloader />;
 	if (!user) return <NotFound />;
@@ -79,7 +78,7 @@ const ProfilePage: FC = () => {
 					);
 				})}
 			</div>
-			<ProfilePosts posts={user.posts} userId={user.id} />
+			<ProfilePosts userId={user.id} />
 			<Outlet />
 		</div>
 	);

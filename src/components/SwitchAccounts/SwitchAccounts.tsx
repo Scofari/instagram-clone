@@ -1,13 +1,11 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
-import styles from "./SwitchAccounts.module.scss";
-import Popup from "../UI/Popup";
-import ProfilePopup from "../ProfilePopup";
-import Modal from "../UI/Modal";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { RootState } from "../../redux/store";
+import Modal from "../UI/Modal";
 import Tooltip from "../UI/Tooltip";
+import styles from "./SwitchAccounts.module.scss";
 
 const SwitchAccounts: FC = () => {
 	const [openModal, setOpenModal] = useState(false);
