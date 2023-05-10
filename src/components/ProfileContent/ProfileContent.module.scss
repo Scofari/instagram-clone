@@ -1,0 +1,10 @@
+.content {
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(auto, 1fr);
+	grid-column-gap: 5px;
+	grid-row-gap: 2px;
+
+	padding-bottom: 60px;
+}

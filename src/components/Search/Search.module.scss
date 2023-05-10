@@ -1,64 +1,64 @@
 .wrapper {
-	position: absolute;
-	top: 0;
-	left: 80px;
-	width: 430px;
-	height: 100vh;
-	background-color: black;
-	padding: 0 20px;
-	border-right: 1px solid rgba(255, 255, 255, 0.2);
-	z-index: 200;
-	border-bottom-right-radius: 15px;
-	border-top-right-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 430px;
+    height: 100vh;
+    background-color: black;
+    padding: 0 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 200;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 
-	h2 {
-		margin: 15px 0 36px 12px;
-		font-weight: 600;
-		font-size: 25px;
-		color: #f5f5f5;
-	}
+    h2 {
+        margin: 15px 0 36px 12px;
+        font-weight: 600;
+        font-size: 25px;
+        color: #f5f5f5;
+    }
 
-	.searchContentBlock {
-		width: 100%;
-		padding: 20px 10px;
-		border-top: 1px solid rgba(255, 255, 255, 0.2);
-		transition: all 0.5 ease-in-out;
+    .searchContentBlock {
+        width: 100%;
+        padding: 20px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.5 ease-in-out;
 
-		h4 {
-			font-size: 15px;
-		}
+        h4 {
+            font-size: 15px;
+        }
 
-		span {
-			opacity: 0.7;
-			font-weight: 500;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-	}
+        span {
+            opacity: 0.7;
+            font-weight: 500;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 
 .fadeEnter {
-	opacity: 0;
-	width: 0px;
+    opacity: 0;
+    width: 0px;
 }
 
 .fadeEnterActive {
-	opacity: 1;
-	width: 430px;
-	transition-property: width, opacity;
-	transition-duration: 600ms;
+    opacity: 1;
+    width: 430px;
+    transition-property: width, opacity;
+    transition-duration: 600ms;
 }
 
 .fadeExit {
-	opacity: 1;
-	width: 430px;
+    opacity: 1;
+    width: 430px;
 }
 
 .fadeExitActive {
-	opacity: 0;
-	width: 0px;
-	transition-property: width, opacity;
-	transition-duration: 600ms;
+    opacity: 0;
+    width: 0px;
+    transition-property: width, opacity;
+    transition-duration: 600ms;
 }
