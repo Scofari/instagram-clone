@@ -11,6 +11,7 @@
 		"server": "json-server -w server/db.json -p 3000"
 	},
 	"dependencies": {
+		"@auth0/auth0-react": "^2.1.0",
 		"@reduxjs/toolkit": "^1.9.3",
 		"@tanstack/react-query": "^4.26.1",
 		"@tanstack/react-query-devtools": "^4.29.0",
@@ -22,7 +23,7 @@
 		"react-icons": "^4.7.1",
 		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.8.1",
-		"react-spinners": "^0.13.8",
+		"react-toastify": "^9.1.2",
 		"react-transition-group": "^4.4.5",
 		"sass": "^1.58.3"
 	},

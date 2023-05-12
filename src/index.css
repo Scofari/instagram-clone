@@ -46,3 +46,8 @@ body {
 svg {
 	color: #f5f5f5;
 }
+
+.Toastify_toast {
+	text-transform: capitalize;
+	color: black;
+}

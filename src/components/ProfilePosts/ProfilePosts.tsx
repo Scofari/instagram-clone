@@ -6,25 +6,25 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 interface ProfilePostsProps {
-    userId?: number;
+	userId?: number;
 }
 
 const ProfilePosts: FC<ProfilePostsProps> = ({ userId }) => {
-    const posts = useSelector((state: RootState) => state.post.posts);
+	const posts = useSelector((state: RootState) => state.post.posts);
 
-    return (
-        <div className={styles.posts}>
-            {posts?.map((post) => {
-                const { id, src } = post;
-                return (
-                    <Link to={`/p/${userId}`} key={id}>
-                        <img src={src} alt="post" />
-                    </Link>
-                );
-            })}
-            <Outlet />
-        </div>
-    );
+	return (
+		<div className={styles.posts}>
+			{posts?.map((post) => {
+				const { id, src } = post;
+				return (
+					<Link to={`/p/${userId}`} key={id}>
+						<img src={src} alt="post" />
+					</Link>
+				);
+			})}
+			<Outlet />
+		</div>
+	);
 };
 
 export default ProfilePosts;
