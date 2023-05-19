@@ -1,7 +1,6 @@
 import { IoIosSettings } from "react-icons/io";
 import { useSelector } from "react-redux";
-import Button from "./../UI/Button";
-import Tooltip from "../UI/Tooltip";
+import { Tooltip, Button } from "../../components/UI";
 import { IUser } from "../../types/user.interface";
 import { RootState } from "../../redux/store";
 import styles from "./ProfileHeader.module.scss";

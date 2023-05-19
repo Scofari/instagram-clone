@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { RiMessengerLine } from "react-icons/ri";
-import NavigationItem from "../NavigationItem/NavigationItem";
+
 import styles from "./Messages.module.scss";
 
 const Messages: FC = () => {

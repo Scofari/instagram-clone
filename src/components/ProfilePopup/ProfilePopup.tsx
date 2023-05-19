@@ -2,7 +2,8 @@ import { FC } from "react";
 import { TbBrandMessenger, MdOutlinePersonAdd } from "react-icons/all";
 import { Link } from "react-router-dom";
 import { IAuthorProfile } from "../../types/author-profile.interface";
-import Button from "./../UI/Button/Button";
+import { Button } from "../../components/UI";
+
 import styles from "./ProfilePopup.module.scss";
 
 interface ProfilePopupProps extends IAuthorProfile {

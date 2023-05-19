@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IconType } from "react-icons/lib";
-import HighlightInput from "../UI/HighlightInput";
-import Modal from "../UI/Modal";
-import Tooltip from "../UI/Tooltip";
+import { Tooltip, Modal, HighlightInput } from "../../components/UI";
 import styles from "./Highlight.module.scss";
 
 interface HighlightProps {

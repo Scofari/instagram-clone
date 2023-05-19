@@ -1,6 +1,6 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Post from "../Post";
+import { Post } from "../../components";
 import PostSkeleton from "./PostSkeleton";
 import { IPost } from "../../types/post.interface";
 import { getAllPosts } from "../../api";

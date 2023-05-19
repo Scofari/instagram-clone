@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import Popup from "../UI/Popup";
-import ProfilePopup from "../ProfilePopup";
+import { ProfilePopup } from "../../components";
+import { Popup } from "../../components/UI";
 import { ISuggestedFollower } from "../../types/suggested-follower.interface";
 import styles from "./SuggestedFollower.module.scss";
 

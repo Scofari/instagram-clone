@@ -17,8 +17,6 @@ const UserContext = createContext<any>({});
 export const UserProvider = ({ children }: { children: ReactNode }) => {
 	const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
 	const [myUser, setMyUser] = useState<any>(null);
-	console.log("myUser: ", myUser);
-	console.log("user: ", user);
 
 	useEffect(() => {
 		if (user) {

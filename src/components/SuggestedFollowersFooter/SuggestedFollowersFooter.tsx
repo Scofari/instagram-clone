@@ -1,25 +1,13 @@
 import { FC } from "react";
+import data from "./data";
 import styles from "./SuggestedFollowersFooter.module.scss";
 
 const SuggestedFollowersFooter: FC = () => {
-	const suggestedFollowersFooter = [
-		"About",
-		"Help",
-		"Press",
-		"API",
-		"Jobs",
-		"Privacy",
-		"Terms",
-		"Locations",
-		"Language",
-		"Meta Verified",
-	];
-
 	return (
 		<div>
 			<nav>
 				<ul className={styles.suggestedFollowersFooter}>
-					{suggestedFollowersFooter.map((item, i) => (
+					{data.map((item, i) => (
 						<li key={i}>
 							<a href="#">{item}</a>
 						</li>

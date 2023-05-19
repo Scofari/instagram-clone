@@ -1,13 +1,13 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import styles from "./Register.module.scss";
-import LogoText from "../../components/LogoText";
-import Button from "../../components/UI/Button";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "react-toastify";
+import { useAuth0 } from "@auth0/auth0-react";
+import { LogoText } from "../../components";
+import { Button } from "../../components/UI";
 import { useAppDispatch } from "../../redux/store";
 import { loginUser, registerUser } from "../../redux/userSlice";
 import { useUserContext } from "../../providers/UserContext";
 import "react-toastify/dist/ReactToastify.css";
-import { useAuth0 } from "@auth0/auth0-react";
+import styles from "./Register.module.scss";
 
 const initialState = {
 	name: "",

@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 import { RiHeartLine } from "react-icons/ri";
+import { CSSTransition } from "react-transition-group";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useAppDispatch } from "../../redux/store";
 import { setShowDropDownMenu } from "../../redux/appSlice";
-import NavigationItem from "../NavigationItem";
-import { CSSTransition } from "react-transition-group";
+import { NavigationItem } from "../../components";
 import styles from "./Notifications.module.scss";
 
 const Notifications: FC = () => {

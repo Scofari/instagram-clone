@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FiHeart, BsChat, FiBookmark } from "react-icons/all";
-import Tooltip from "../UI/Tooltip";
 import { IUserSummary } from "../../types/user-summary.interface";
+import { Share } from "../../components";
+import { Tooltip } from "../../components/UI";
 import styles from "./PostActions.module.scss";
-import Share from "../Share";
 
 interface PostActionsProps extends IUserSummary {}
 

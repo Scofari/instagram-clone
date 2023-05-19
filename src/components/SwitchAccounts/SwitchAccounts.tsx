@@ -2,12 +2,11 @@ import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useUserContext } from "../../providers/UserContext";
 import { RootState } from "../../redux/store";
-import Modal from "../UI/Modal";
-import Tooltip from "../UI/Tooltip";
+import { Tooltip, Modal } from "../../components/UI";
 import styles from "./SwitchAccounts.module.scss";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const SwitchAccounts: FC = () => {
 	const [openModal, setOpenModal] = useState(false);

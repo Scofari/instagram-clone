@@ -7,7 +7,7 @@ import {
 	useRef,
 } from "react";
 import { BsEmojiSmile } from "react-icons/all";
-import Tooltip from "../UI/Tooltip";
+import { Tooltip } from "../../components/UI";
 import styles from "./CommentForm.module.scss";
 
 interface CommentFormProps {

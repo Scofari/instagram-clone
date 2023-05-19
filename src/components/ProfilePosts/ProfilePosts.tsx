@@ -1,9 +1,8 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { FC } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { IUserPost } from "../../types/user.interface";
-import styles from "./ProfilePosts.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import styles from "./ProfilePosts.module.scss";
 
 interface ProfilePostsProps {
 	userId?: number;

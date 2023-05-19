@@ -1,6 +1,5 @@
 import { FC } from "react";
-import PostsList from "../../components/PostsList";
-import SuggestedFollowers from "../../components/SuggestedFollowers/SuggestedFollowers";
+import { SuggestedFollowers, PostsList } from "../../components";
 import styles from "./Home.module.scss";
 
 const Home: FC = () => {

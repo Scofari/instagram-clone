@@ -1,8 +1,8 @@
 import { IconType } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
-import styles from "./NavigationItem.module.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import styles from "./NavigationItem.module.scss";
 
 interface NavigationItemProps {
 	title: string;

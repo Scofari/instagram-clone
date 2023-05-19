@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
 import { RiMenuLine } from "react-icons/ri";
-import NavigationItem from "./../NavigationItem";
-import MorePopup from "./../MorePopup";
+import { MorePopup, NavigationItem } from "../../components";
+
 import styles from "./More.module.scss";
 
 const More: FC = () => {

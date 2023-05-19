@@ -4,8 +4,7 @@ import { RiSearchLine } from "react-icons/ri";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useAppDispatch } from "../../redux/store";
 import { setShowDropDownMenu } from "../../redux/appSlice";
-import NavigationItem from "../NavigationItem";
-import SearchInput from "../SearchInput";
+import { SearchInput, NavigationItem } from "../../components";
 import styles from "./Search.module.scss";
 
 const Search: FC = () => {

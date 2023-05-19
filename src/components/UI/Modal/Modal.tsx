@@ -1,23 +1,23 @@
-import ReactDOM from "react-dom";
-import { ReactNode, useEffect } from "react";
-import Tooltip from "../Tooltip";
+import { createPortal } from "react-dom";
+import { FC, ReactNode, useEffect } from "react";
+import Tooltip from "./../Tooltip";
 import styles from "./Modal.module.scss";
 
 interface ModalProps {
 	children: ReactNode;
-	setOpenModal: (x: boolean) => void;
+	setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 	title?: string | ReactNode;
 	background?: "gray" | "black";
 	isDefaultClose?: boolean;
 }
 
-const Modal = ({
+const Modal: FC<ModalProps> = ({
 	children,
 	title,
 	setOpenModal,
 	background = "gray",
 	isDefaultClose,
-}: ModalProps) => {
+}) => {
 	useEffect(() => {
 		const onEscPress = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
@@ -32,7 +32,7 @@ const Modal = ({
 		};
 	}, [setOpenModal]);
 
-	return ReactDOM.createPortal(
+	return createPortal(
 		<div className={styles.overlay} onClick={() => setOpenModal(false)}>
 			<span
 				className={styles.mainClose}
@@ -64,7 +64,7 @@ const Modal = ({
 				{children}
 			</div>
 		</div>,
-		document.getElementById("portal") as HTMLElement
+		document.getElementById("modal") as HTMLElement
 	);
 };
 

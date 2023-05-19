@@ -9,17 +9,24 @@ import {
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { getPostById } from "../../api";
-import CommentForm from "../../components/CommentForm";
-import Modal from "../../components/UI/Modal";
-import PostActions from "../../components/PostActions";
-import ProfilePopup from "../../components/ProfilePopup";
-import Spinner from "../../components/UI/Spinner";
-import NotFound from "../NotFound";
-import Popup from "../../components/UI/Popup";
-import OptionsModal from "../../components/UI/OptionsModal";
-import Tooltip from "../../components/UI/Tooltip";
-import { getLocalStorage } from "../../components/Post/Post";
-import CommentList from "../../components/CommentList";
+import { NotFound } from "../../pages";
+import {
+	CommentForm,
+	PostActions,
+	ProfilePopup,
+	CommentList,
+} from "../../components";
+import {
+	Modal,
+	Spinner,
+	Popup,
+	OptionsModal,
+	Tooltip,
+} from "../../components/UI";
+import {
+	addCommentToLocalStorage,
+	getCommentFromLocalStorage,
+} from "../../utils/localStorage";
 import styles from "./PostModal.module.scss";
 
 dayjs.extend(relativeTime);
@@ -28,11 +35,13 @@ const PostModal = () => {
 	// const [index, setIndex] = useState(0);
 	const [viewAllComments, setViewAllComments] = useState(false);
 	const [comment, setComment] = useState("");
-	const [comments, setComments] = useState<string[]>(getLocalStorage());
+	const [comments, setComments] = useState<string[]>(
+		getCommentFromLocalStorage()
+	);
 	const [openPostModal, setOpenPostModal] = useState(false);
 
 	useEffect(() => {
-		localStorage.setItem("comments", JSON.stringify(comments));
+		addCommentToLocalStorage(comments);
 	}, [comments]);
 
 	const { id } = useParams();

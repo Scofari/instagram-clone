@@ -5,12 +5,14 @@ import {
 	RiVideoLine,
 	RiMessengerLine,
 } from "react-icons/all";
-import NavigationItem from "../NavigationItem";
-import More from "../More";
-import Create from "../Create";
-import Search from "../Search";
-import Profile from "../Profile";
-import Notifications from "../Notifications";
+import {
+	Profile,
+	Search,
+	Create,
+	More,
+	NavigationItem,
+	Notifications,
+} from "../../components";
 import styles from "./NavigationMenu.module.scss";
 
 const NavigationMenu: FC = () => {

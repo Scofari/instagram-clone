@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import {
 	IoAddSharp,
 	AiOutlineTable,
@@ -9,13 +9,11 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { IconType } from "react-icons/lib";
 import { getUserByUsername } from "../../api";
-import Highlight from "../../components/Highlight";
-import ProfileHeader from "../../components/ProfileHeader";
-import ProfilePosts from "../../components/ProfilePosts/index";
-import CircularPreloader from "../../components/UI/CircularPreloader";
-import NotFound from "../NotFound";
 import { useAppDispatch } from "../../redux/store";
+import { NotFound } from "../../pages";
 import { setPosts } from "../../redux/postSlice";
+import { Highlight, ProfileHeader, ProfilePosts } from "../../components";
+import { CircularPreloader } from "../../components/UI";
 import styles from "./ProfilePage.module.scss";
 
 interface NavigationProfile {

@@ -1,11 +1,13 @@
+import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useState, FC } from "react";
-import SuggestedFollower from "../SuggestedFollower";
-import SuggestedFollowersFooter from "../UserListFooter";
 import { getSuggestedFollowers } from "../../api";
 import { ISuggestedFollower } from "../../types/suggested-follower.interface";
-import SwitchAccounts from "../SwitchAccounts";
 import SuggestedFollowerSkeleton from "../SuggestedFollower/SuggestedFollowerSkeleton";
+import {
+	SwitchAccounts,
+	SuggestedFollowersFooter,
+	SuggestedFollower,
+} from "../../components";
 import styles from "./SuggestedFollowers.module.scss";
 
 const SuggestedFollowers: FC = () => {

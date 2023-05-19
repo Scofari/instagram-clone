@@ -1,12 +1,15 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import { BsClockHistory, BsBookmark, BsMoon } from "react-icons/bs";
-import { IoIosSettings } from "react-icons/io";
-import { TbMessageReport } from "react-icons/tb";
+import {
+	BsClockHistory,
+	BsBookmark,
+	BsMoon,
+	IoIosSettings,
+	TbMessageReport,
+} from "react-icons/all";
 import { IconType } from "react-icons/lib";
-import { useUserContext } from "../../providers/UserContext";
 import styles from "./MorePopup.module.scss";
-import { Navigate, useNavigate } from "react-router-dom";
 
 type PopupItems = {
 	text: string;
@@ -26,14 +29,16 @@ const popupItems: PopupItems[] = [
 const MorePopup: FC<{ isShown: boolean }> = ({ isShown }) => {
 	const navigate = useNavigate();
 	const handleOptions = (text: string) => {
-		switch (text) {
-			case "Log out":
-				navigate("/register");
-				break;
+		return () => {
+			switch (text) {
+				case "Log out":
+					navigate("/register");
+					break;
 
-			default:
-				break;
-		}
+				default:
+					break;
+			}
+		};
 	};
 	return (
 		<CSSTransition

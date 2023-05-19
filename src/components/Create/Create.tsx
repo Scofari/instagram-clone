@@ -1,9 +1,8 @@
 import { FC, useState } from "react";
 import { RiAddBoxLine } from "react-icons/ri";
+import { InputFile, Modal } from "../../components/UI";
+import { NavigationItem } from "../../components";
 import SVGMedia from "./SVGMedia";
-import NavigationItem from "../NavigationItem/index";
-import Modal from "../UI/Modal";
-import InputFile from "../UI/InputFile";
 import styles from "./Create.module.scss";
 
 const Create: FC = () => {

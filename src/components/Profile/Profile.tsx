@@ -1,6 +1,6 @@
 import ContentLoader from "react-content-loader";
-import NavigationItem from "../NavigationItem";
 import { useSelector } from "react-redux";
+import { NavigationItem } from "../../components";
 import { RootState } from "../../redux/store";
 
 const Profile = () => {
