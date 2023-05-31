@@ -30,7 +30,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 						<App />
 					</UserProvider>
 				</Auth0Provider>
-				,
 				<ReactQueryDevtools />
 			</QueryClientProvider>
 		</Provider>

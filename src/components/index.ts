@@ -26,8 +26,11 @@ import SuggestedFollower from "./SuggestedFollower";
 import SuggestedFollowers from "./SuggestedFollowers";
 import SwitchAccounts from "./SwitchAccounts";
 import SuggestedFollowersFooter from "./SuggestedFollowersFooter";
+import Chat from "./Chat";
+import MessageHeader from "./MessageHeader";
 
 export {
+	Chat,
 	CommentForm,
 	CommentList,
 	Create,
@@ -56,4 +59,5 @@ export {
 	SuggestedFollowers,
 	SwitchAccounts,
 	SuggestedFollowersFooter,
+	MessageHeader,
 };

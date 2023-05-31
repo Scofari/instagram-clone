@@ -1,0 +1,136 @@
+.messages {
+	width: calc(100% - 60px);
+	position: absolute;
+	z-index: 100;
+	min-height: 100vh;
+	display: flex;
+	left: 60px;
+	background-color: black;
+
+	svg {
+		cursor: pointer;
+	}
+
+	.users {
+		min-width: 450px;
+		border: 1px solid rgba($color: #fff, $alpha: 0.2);
+
+		ul {
+			display: flex;
+			justify-content: space-around;
+			position: relative;
+
+			a {
+				text-decoration: none;
+			}
+
+			li {
+				font-weight: 500;
+				color: #b8b8b8;
+				cursor: pointer;
+
+				&:active {
+					color: #959595;
+				}
+			}
+		}
+
+		.divider {
+			display: block;
+			position: relative;
+			top: 10px;
+			height: 1px;
+			width: 100%;
+			z-index: -1;
+			background-color: rgba($color: #fff, $alpha: 0.2);
+			margin-bottom: 10px;
+		}
+		.activeUser {
+			background-color: rgba($color: #fff, $alpha: 0.15);
+		}
+
+		.userInfo {
+			padding: 10px 20px;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			gap: 15px;
+
+			img {
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				object-fit: cover;
+				cursor: pointer;
+			}
+
+			> div {
+				display: flex;
+				flex-direction: column;
+
+				p {
+					font-size: 14px;
+				}
+
+				span {
+					font-size: 12px;
+					color: #a3a3a3;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					width: 220px;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+
+	.chat {
+		flex-grow: 1;
+
+		.circle {
+			width: 100px;
+			height: 100px;
+			border: 3px solid #fff;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				font-size: 50px;
+				cursor: default;
+			}
+		}
+
+		.defaultInfo {
+			display: grid;
+			place-items: center;
+			transform: translateY(100%);
+			gap: 15px;
+
+			span {
+				font-size: 20px;
+			}
+
+			p {
+				color: #a9a9a9;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.active {
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -11px;
+		width: 50px;
+		height: 1px;
+		display: block;
+		background-color: #fff;
+	}
+}

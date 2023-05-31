@@ -128,11 +128,7 @@ const PostModal = () => {
 						)}
 
 						<div className={styles.footerModal}>
-							<PostActions
-								avatar={post.authorProfile.avatar}
-								id={post.authorProfile.id}
-								username={post.authorProfile.username}
-							/>
+							<PostActions id={post.authorProfile.id} />
 							<span>{post.likes} likes</span>
 							<time dateTime={post.dateTime} title={dateTooltip}>
 								{relativeDate}
@@ -153,7 +149,7 @@ const PostModal = () => {
 						</Tooltip>
 					</div>
 					<div className={styles.arrowLeft}>
-						<Tooltip content="Next">
+						<Tooltip content="Prev">
 							<RiArrowLeftSLine />
 						</Tooltip>
 					</div>

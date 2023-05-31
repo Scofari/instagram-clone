@@ -1,140 +1,143 @@
 .wrapper {
-    display: flex;
-    justify-content: center;
-    height: 95vh;
-    width: 70vw;
-    position: relative;
-    .postImg {
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+	display: flex;
+	justify-content: center;
+	height: 94vh;
+	width: 70vw;
+	position: relative;
+	.postImg {
+		width: 100%;
 
-    .arrowRight,
-    .arrowLeft {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: #fff;
-        position: absolute;
-        right: -190px;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.2s ease-in-out;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 
-        &:hover {
-            background-color: #adadad;
-        }
-        svg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            stroke: white;
-            fill: #666666;
-            cursor: pointer;
-        }
-    }
+	.arrowRight,
+	.arrowLeft {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #fff;
+		position: absolute;
+		right: -190px;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.2s ease-in-out;
 
-    .arrowLeft {
-        left: -170px;
-    }
+		&:hover {
+			background-color: #adadad;
+		}
+		svg {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			stroke: white;
+			fill: #666666;
+			cursor: pointer;
+		}
+	}
+
+	.arrowLeft {
+		left: -170px;
+	}
 }
 
 .modalContent {
-    padding: 0 16px;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
+	padding: 0 16px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 
-    .commentList {
-        width: 400px;
-        justify-self: flex-start;
-        overflow-y: auto;
-        overflow-x: hidden;
+	.commentList {
+		justify-self: flex-start;
 
-        p {
-            padding: 3px 0;
-        }
-    }
+		p {
+			padding: 3px 0;
+		}
+	}
 
-    .noComments {
-        display: flex;
-        flex-direction: column;
-        margin-top: auto;
-        h3 {
-            font-size: 25px;
-            line-height: 2;
-        }
-    }
-    .footerModal {
-        margin-top: auto;
-        display: flex;
-        flex-direction: column;
+	.noComments {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+		h3 {
+			font-size: 25px;
+			line-height: 2;
+		}
+	}
+	.footerModal {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
 
-        span,
-        time {
-            align-self: start;
-        }
+		span {
+			font-weight: bold;
+		}
 
-        time {
-            font-size: 13px;
-            color: #afafaf;
-        }
-    }
+		span,
+		time {
+			align-self: start;
+		}
+
+		time {
+			font-size: 13px;
+			color: #afafaf;
+		}
+	}
 }
 
 .post {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-    a {
-        text-decoration: none;
-    }
+	a {
+		text-decoration: none;
+	}
 
-    .avatar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+	.avatar {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 
-        img {
-            height: 30px;
-            width: 30px;
-            margin-left: 10px;
-            border-radius: 50%;
-            object-fit: cover;
-            cursor: pointer;
-        }
+		img {
+			height: 30px;
+			width: 30px;
+			margin-left: 10px;
+			border-radius: 50%;
+			object-fit: cover;
+			cursor: pointer;
+		}
 
-        span {
-            text-decoration: none;
-            font-weight: bold;
+		span {
+			text-decoration: none;
+			font-weight: bold;
 
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-    }
-    svg {
-        margin-left: auto;
-        font-size: 2rem;
-        cursor: pointer;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	svg {
+		margin-left: auto;
+		font-size: 2rem;
+		cursor: pointer;
 
-        &:hover {
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			opacity: 0.5;
+		}
+	}
 }
 
 .sizeModal {
-    background-color: black;
-    width: 45vw;
-    height: 95vh;
+	background-color: black;
+	width: 45vw;
+	height: 95vh;
 }

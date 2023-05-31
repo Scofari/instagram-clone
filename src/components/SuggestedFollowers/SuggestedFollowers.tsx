@@ -19,16 +19,16 @@ const SuggestedFollowers: FC = () => {
 	const getSuggestedFollowerDescription = ({
 		followedBy,
 		followsYou,
-	}: ISuggestedFollower) => {
+	}: ISuggestedFollower): string => {
 		if (followsYou) return "Follows you";
 		if (followedBy.length) return `Followed by ${followedBy.join(",")}`;
 
 		return "Suggested for you";
 	};
 
-	const suggestedFollowerSkeleton = [...new Array(5)].map((_, idx) => (
-		<SuggestedFollowerSkeleton key={idx} />
-	));
+	const suggestedFollowerSkeleton: JSX.Element[] = [...new Array(5)].map(
+		(_, idx) => <SuggestedFollowerSkeleton key={idx} />
+	);
 
 	return (
 		<div className={styles.suggestedFollowers}>
@@ -40,7 +40,8 @@ const SuggestedFollowers: FC = () => {
 			{isLoading
 				? suggestedFollowerSkeleton
 				: followers.map((follower) => {
-						const { username, id } = follower;
+						const { username, id, authorProfile, avatar } =
+							follower;
 						return (
 							<SuggestedFollower
 								key={id}
@@ -48,7 +49,9 @@ const SuggestedFollowers: FC = () => {
 								description={getSuggestedFollowerDescription(
 									follower
 								)}
-								{...follower}
+								avatar={avatar}
+								username={username}
+								authorProfile={authorProfile}
 							/>
 						);
 				  })}

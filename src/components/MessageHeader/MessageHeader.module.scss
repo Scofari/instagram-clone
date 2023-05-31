@@ -1,32 +1,26 @@
-.actions {
-	padding: 1.2rem 0;
-	font-size: 2.3rem;
+.header {
 	display: flex;
-	gap: 1.5rem;
+	justify-content: space-between;
+	padding: 30px 24px 20px;
 
-	:last-child {
-		margin-left: auto;
+	p {
+		cursor: pointer;
+		span {
+			font-weight: bold;
+			font-size: 20px;
+			margin-right: 5px;
+		}
+		svg {
+			font-size: 15px;
+		}
 	}
 
 	svg {
-		&:hover {
-			cursor: pointer;
-			opacity: 0.5;
-		}
+		font-size: 25px;
 	}
 }
 
-.heart {
-	stroke: red;
-	fill: red;
-}
-
-.bookMark {
-	stroke: white;
-	fill: white;
-}
-
-.share {
+.container {
 	width: 45vw;
 	max-width: 550px;
 	height: 440px;
@@ -35,12 +29,13 @@
 
 .modalContent {
 	display: flex;
+	flex-wrap: wrap;
 	top: 50%;
 	left: 50%;
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 20px;
-	z-index: 300;
+	z-index: 10000;
 	animation: show 800ms ease-in-out;
 
 	.to {
@@ -72,21 +67,16 @@
 		}
 	}
 
-	.suggested {
-		padding: 15px;
-		align-items: start;
-		display: flex;
-		flex-direction: column;
-
-		span {
-			font-size: 14px;
-			font-weight: bold;
+	.accounts {
+		p {
+			text-align: left;
+			color: #b4b4b4;
+			padding: 5px 20px;
 		}
 	}
 
-	p {
-		width: 300px;
-		font-size: 20px;
+	.shareBtn {
+		margin-top: auto;
 	}
 }
 

@@ -3,13 +3,13 @@ import { FiSend } from "react-icons/fi";
 import { Button, Tooltip, Modal } from "../../components/UI";
 import styles from "./Share.module.scss";
 
-const Share = () => {
+const Share = ({ text }: { text: string }) => {
 	const [openModal, setOpenModal] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
 	return (
 		<>
 			<div onClick={() => setOpenModal(true)}>
-				<Tooltip content="Share Post">
+				<Tooltip content={text}>
 					<FiSend />
 				</Tooltip>
 			</div>

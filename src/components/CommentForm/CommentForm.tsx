@@ -66,9 +66,7 @@ const CommentForm: FC<CommentFormProps> = ({
 							placeholder="Add a comment..."
 							onChange={(e) => setComment(e.target.value)}
 						/>
-						<button type="submit" className={styles.postBtn}>
-							Post
-						</button>
+						<button type="submit">Post</button>
 					</div>
 				) : (
 					<>
@@ -78,11 +76,7 @@ const CommentForm: FC<CommentFormProps> = ({
 							placeholder="Add a comment..."
 							onChange={(e) => setComment(e.target.value)}
 						/>
-						{comment && (
-							<button type="submit" className={styles.postBtn}>
-								Post
-							</button>
-						)}
+						{comment && <button type="submit">Post</button>}
 						<Tooltip content="Emoji">
 							<BsEmojiSmile size={emojiSizeStyle} />
 						</Tooltip>

@@ -29,16 +29,14 @@ const popupItems: PopupItems[] = [
 const MorePopup: FC<{ isShown: boolean }> = ({ isShown }) => {
 	const navigate = useNavigate();
 	const handleOptions = (text: string) => {
-		return () => {
-			switch (text) {
-				case "Log out":
-					navigate("/register");
-					break;
+		switch (text) {
+			case "Log out":
+				navigate("/register");
+				break;
 
-				default:
-					break;
-			}
-		};
+			default:
+				break;
+		}
 	};
 	return (
 		<CSSTransition

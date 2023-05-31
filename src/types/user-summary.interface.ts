@@ -1,5 +1,5 @@
 export interface IUserSummary {
-    id: number;
-    avatar: string;
-    username: string;
+	id: number;
+	avatar: string;
+	username: string;
 }

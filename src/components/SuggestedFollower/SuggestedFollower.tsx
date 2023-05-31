@@ -2,12 +2,15 @@ import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProfilePopup } from "../../components";
 import { Popup } from "../../components/UI";
-import { ISuggestedFollower } from "../../types/suggested-follower.interface";
+import { IAuthorProfile } from "../../types/author-profile.interface";
 import styles from "./SuggestedFollower.module.scss";
 
-interface SuggestedFollowerProps extends ISuggestedFollower {
-	description: string;
+interface SuggestedFollowerProps {
 	to: string;
+	description: string;
+	avatar: string;
+	username: string;
+	authorProfile: IAuthorProfile;
 }
 
 const SuggestedFollower: FC<SuggestedFollowerProps> = ({

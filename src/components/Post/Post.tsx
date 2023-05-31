@@ -32,7 +32,7 @@ const Post = ({ authorProfile, status, image, likes, dateTime }: IPost) => {
 			<div className={styles.cover}>
 				<img src={image} alt="cover" />
 			</div>
-			<PostActions {...authorProfile} />
+			<PostActions id={authorProfile.id} />
 			<span>{likes} likes</span>
 			<p>
 				<span>
