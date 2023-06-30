@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import { Tooltip } from "../../components/UI";
-import { useToggleLike } from "../../hooks/useToggleLike";
 import styles from "./CommentList.module.scss";
 
 interface Props {
@@ -15,7 +14,6 @@ const CommentList = ({
 	setViewAllComments,
 	comments,
 }: Props) => {
-	// const [isLiked, toggleIsLiked] = useToggleLike(false);
 	const [isLiked, setIsLiked] = useState(false);
 	const [index, setIndex] = useState(4);
 

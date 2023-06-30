@@ -280,6 +280,13 @@
 			"postsCount": 2,
 			"followersCount": 3,
 			"followingCount": 4
+		},
+		{
+			"email": "Ion@example.com",
+			"password": "$2a$10$cVI7aX/tGW3M.0g4Oh2uf.lCdvjNBFZEx4qXD2kyImGsHVRo3fZBS",
+			"name": "Ion",
+			"isMember": false,
+			"id": 7
 		}
 	],
 	"suggested-followers": [

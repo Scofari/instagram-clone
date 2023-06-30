@@ -1,44 +1,44 @@
 import { FC } from "react";
 import {
-	RiHomeHeartLine,
-	RiCompass3Line,
-	RiVideoLine,
-	RiMessengerLine,
+  RiCompass3Line,
+  RiHomeHeartLine,
+  RiMessengerLine,
+  RiVideoLine,
 } from "react-icons/all";
 import {
-	Profile,
-	Search,
-	Create,
-	More,
-	NavigationItem,
-	Notifications,
+  Create,
+  More,
+  NavigationItem,
+  Notifications,
+  Profile,
+  Search,
 } from "../../components";
 import styles from "./NavigationMenu.module.scss";
 
 const NavigationMenu: FC = () => {
-	return (
-		<nav className={styles.menu}>
-			<NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
-			<Search />
-			<NavigationItem
-				icon={RiCompass3Line}
-				to="/explore"
-				title="Explore"
-			/>
-			<NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
+  return (
+    <nav className={styles.menu}>
+      <NavigationItem icon={RiHomeHeartLine} to="/" title="Home" />
+      <div className={styles.hideOnTablet}>
+        <Search />
+      </div>
+      <NavigationItem icon={RiCompass3Line} to="/explore" title="Explore" />
+      <NavigationItem icon={RiVideoLine} to="/reels" title="Reels" />
 
-			<NavigationItem
-				icon={RiMessengerLine}
-				to="/direct/inbox"
-				title="Messages"
-			/>
-			<Notifications />
+      <NavigationItem
+        icon={RiMessengerLine}
+        to="/direct/inbox"
+        title="Messages"
+      />
+      <Notifications />
 
-			<Create />
-			<Profile />
-			<More />
-		</nav>
-	);
+      <Create />
+      <Profile />
+      <div className={styles.hideOnTablet}>
+        <More />
+      </div>
+    </nav>
+  );
 };
 
 export default NavigationMenu;

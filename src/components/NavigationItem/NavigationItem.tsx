@@ -5,55 +5,49 @@ import { RootState } from "../../redux/store";
 import styles from "./NavigationItem.module.scss";
 
 interface NavigationItemProps {
-	title: string;
-	to?: string;
-	icon?: IconType;
-	src?: string;
-	navProfile?: string;
+  title: string;
+  to?: string;
+  icon?: IconType;
+  src?: string;
+  navProfile?: string;
 }
 
 const NavigationItem = ({
-	title = "",
-	to,
-	icon: Icon,
-	src = "",
-	navProfile = "",
+  title = "",
+  to,
+  icon: Icon,
+  src = "",
+  navProfile = "",
 }: NavigationItemProps) => {
-	const showDropDownMenu = useSelector(
-		(state: RootState) => state.app.showDropDownMenu
-	);
+  const showDropDownMenu = useSelector(
+    (state: RootState) => state.app.showDropDownMenu
+  );
 
-	return (
-		<li className={styles.item}>
-			{to ? (
-				<NavLink
-					to={to}
-					className={styles.link}
-					style={({ isActive }) => ({
-						fontWeight: isActive ? "bold" : "",
-					})}
-				>
-					{Icon && (
-						<Icon className={`${styles.navIcon} ${navProfile}`} />
-					)}
-					{src && <img src={src} className={styles.navIcon} />}
-					{!showDropDownMenu && (
-						<span className={navProfile}>{title}</span>
-					)}
-				</NavLink>
-			) : (
-				<div className={styles.link}>
-					{Icon && (
-						<Icon className={`${styles.navIcon} ${navProfile}`} />
-					)}
-					{src && <img src={src} className={styles.navIcon} />}
-					{!showDropDownMenu && (
-						<span className={navProfile}>{title}</span>
-					)}
-				</div>
-			)}
-		</li>
-	);
+  return (
+    <li className={styles.item}>
+      {to ? (
+        <NavLink
+          to={to}
+          className={styles.link}
+          style={({ isActive }) => ({
+            fontWeight: isActive ? "bold" : "",
+          })}
+        >
+          {Icon && <Icon className={`${styles.navIcon} ${navProfile}`} />}
+          {src && <img src={src} className={styles.navIcon} />}
+          {!showDropDownMenu && (
+            <span className={styles.navProfile}>{title}</span>
+          )}
+        </NavLink>
+      ) : (
+        <div className={styles.link}>
+          {Icon && <Icon className={`${styles.navIcon} ${navProfile}`} />}
+          {src && <img src={src} className={styles.navIcon} />}
+          {!showDropDownMenu && <span className={navProfile}>{title}</span>}
+        </div>
+      )}
+    </li>
+  );
 };
 
 export default NavigationItem;

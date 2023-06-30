@@ -15,7 +15,7 @@
 		position: absolute;
 		right: 30px;
 		top: 0px;
-		font-size: 35px;
+		font-size: 30px;
 		cursor: pointer;
 	}
 
@@ -56,12 +56,20 @@
 			right: 10px;
 			font-size: 35px;
 			cursor: pointer;
+
+			span {
+				font-size: 35px;
+			}
 		}
 	}
 
 	.blackBackground {
 		background-color: black;
 	}
+}
+
+.tooltipPosition {
+	left: -45px;
 }
 
 @keyframes show {

@@ -1,6 +1,5 @@
 .actions {
 	padding: 1.2rem 0;
-	font-size: 2.3rem;
 	display: flex;
 	gap: 1.5rem;
 
@@ -9,6 +8,8 @@
 	}
 
 	svg {
+		font-size: 2.3rem;
+
 		&:hover {
 			cursor: pointer;
 			opacity: 0.5;

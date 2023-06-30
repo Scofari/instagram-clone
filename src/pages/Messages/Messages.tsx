@@ -1,11 +1,10 @@
 import { FC, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { IoIosArrowDown, RiMessengerLine, FiEdit } from "react-icons/all";
+import { RiMessengerLine } from "react-icons/all";
 import { useSelector } from "react-redux";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useUserContext } from "../../providers/UserContext";
-import { Button, Modal, Tooltip } from "../../components/UI";
+import { Link, NavLink } from "react-router-dom";
 import { Chat, MessageHeader } from "../../components";
+import { Button } from "../../components/UI";
+import { useTitle } from "../../hooks/useTitle";
 import { RootState } from "../../redux/store";
 import styles from "./Messages.module.scss";
 
@@ -13,18 +12,11 @@ const navigation = ["Primary", "General", "Requests"];
 
 const Messages: FC = () => {
 	const [active, setActive] = useState(false);
-	const [openModal, setOpenModal] = useState(false);
-	const [searchValue, setSearchValue] = useState("");
 	const [value, setValue] = useState(0);
-	const { myUser, loginWithRedirect } = useUserContext();
-	const { user } = useAuth0();
 	const currentUser = useSelector(
 		(state: RootState) => state.app.currentUser
 	);
-
-	if (!currentUser) return null;
-	const { avatar, username } = currentUser;
-
+	useTitle("Inbox • Chats |");
 	return (
 		<main>
 			<div className={styles.messages}>
@@ -56,10 +48,13 @@ const Messages: FC = () => {
 								}`}
 								onClick={() => setActive(!active)}
 							>
-								<img src={myUser.picture} alt="avatar" />
+								<img
+									src={currentUser?.avatar || ""}
+									alt="avatar"
+								/>
 								<div>
-									<p>{myUser.name}</p>
-									<span>{myUser.nickname}</span>
+									<p>{currentUser?.username || ""}</p>
+									<span>{currentUser?.username || ""}</span>
 								</div>
 							</div>
 						</Link>

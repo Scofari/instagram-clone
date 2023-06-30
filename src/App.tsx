@@ -1,32 +1,31 @@
 import { FC, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getCurrentUser } from "./api";
-import { useAppDispatch } from "./redux/store";
-import { setCurrentUser } from "./redux/appSlice";
-import InitialLoadingPage from "./components/InitialLoadingPage";
-import AppRouter from "./AppRouter";
 import "./App.module.scss";
+import InitialLoadingPage from "./components/InitialLoadingPage";
+import { useCurrentUser } from "./hooks/useCurrentUser";
+import { setCurrentUser } from "./redux/appSlice";
+import { useAppDispatch } from "./redux/store";
+import AllRoutes from "./routes/AllRoutes";
 
 const App: FC = () => {
-	const dispatch = useAppDispatch();
-	const { data: currentUser, isLoading: isUserLoading } = useQuery(
-		["auth"],
-		getCurrentUser
-	);
+  const { data: currentUser, isLoading, error } = useCurrentUser();
 
-	useEffect(() => {
-		if (currentUser) {
-			dispatch(setCurrentUser(currentUser));
-		}
-	}, [isUserLoading]);
+  const dispatch = useAppDispatch();
 
-	if (isUserLoading || !currentUser) return <InitialLoadingPage />;
+  useEffect(() => {
+    if (currentUser) {
+      dispatch(setCurrentUser(currentUser));
+    }
+  }, [isLoading]);
 
-	return (
-		<>
-			<AppRouter />
-		</>
-	);
+  if (isLoading || !currentUser) return <InitialLoadingPage />;
+
+  if (error) return <p>{error.message}</p>;
+
+  return (
+    <>
+      <AllRoutes />
+    </>
+  );
 };
 
 export default App;

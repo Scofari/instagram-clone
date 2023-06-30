@@ -1,21 +1,24 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
+	AiOutlineHeart,
 	BsCameraVideo,
 	BsEmojiSmile,
 	BsInfoCircle,
-	TiMicrophoneOutline,
 	TbPhoto,
-	AiOutlineHeart,
+	TiMicrophoneOutline,
 } from "react-icons/all";
 import { HiOutlinePhone } from "react-icons/hi";
-import { useUserContext } from "../../providers/UserContext";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { RootState } from "../../redux/store";
 import { Tooltip } from "../UI";
 import styles from "./Chat.module.scss";
 
 const Chat = () => {
-	const { myUser } = useUserContext();
 	const [message, setMessage] = useState("");
+	const currentUser = useSelector(
+		(state: RootState) => state.app.currentUser
+	);
 
 	return (
 		<div className={styles.chat}>
@@ -23,10 +26,10 @@ const Chat = () => {
 				<div className={styles.headerChat}>
 					<Link to={""}>
 						<div className={styles.userInfo}>
-							<img src={myUser.picture} alt="avatar" />
+							<img src={currentUser?.avatar} alt="avatar" />
 							<div>
-								<p>{myUser.name}</p>
-								<span>{myUser.nickname}</span>
+								<p>{currentUser?.username}</p>
+								<span>{currentUser?.username}</span>
 							</div>
 						</div>
 					</Link>

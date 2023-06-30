@@ -4,12 +4,12 @@ import { Sidebar } from "../components";
 import styles from "./Layout.module.scss";
 
 const Layout: FC = () => {
-	return (
-		<div className={styles.layout}>
-			<Sidebar />
-			<main className={styles.mainSection}>{<Outlet />}</main>
-		</div>
-	);
+  return (
+    <div className={styles.layout}>
+      <Sidebar />
+      <main className={styles.mainSection}>{<Outlet />}</main>
+    </div>
+  );
 };
 
 export default Layout;

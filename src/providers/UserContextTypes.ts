@@ -1,8 +1,8 @@
-import { ReactNode, Dispatch, SetStateAction } from "react";
+import { ReactNode } from "react";
 
 export interface IUserContext {
 	myUser: string | null;
-	logout: ({ returnTo }: { returnTo: string }) => void;
+	logout: () => void;
 	loginWithRedirect: () => void;
 }
 

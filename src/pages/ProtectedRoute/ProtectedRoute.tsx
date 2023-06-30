@@ -1,14 +1,11 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useUserContext } from "../../providers/UserContext";
+import { getTokenFromSessionStorage } from "../../utils/sessionStorage";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-	const { myUser } = useUserContext();
+	const token = getTokenFromSessionStorage();
 
-	if (!myUser) return <Navigate to="/register" />;
-
-	return <>{children}</>;
+	return token ? <>{children}</> : <Navigate to={"/register"} />;
 };
 
 export default ProtectedRoute;

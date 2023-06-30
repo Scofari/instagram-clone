@@ -1,116 +1,164 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useAuth0 } from "@auth0/auth0-react";
 import { LogoText } from "../../components";
 import { Button } from "../../components/UI";
-import { useAppDispatch } from "../../redux/store";
-import { loginUser, registerUser } from "../../redux/userSlice";
-import { useUserContext } from "../../providers/UserContext";
-import "react-toastify/dist/ReactToastify.css";
+import { useTitle } from "../../hooks/useTitle";
+import { register } from "../../services";
+import { login } from "../../services/login";
 import styles from "./Register.module.scss";
+import { IAuthDetail } from "../../types/authDetail.interface";
 
-const initialState = {
-	name: "",
-	password: "",
-	email: "",
-	isMember: true,
+const initialState: IAuthDetail = {
+  name: "",
+  password: "",
+  email: "",
+  isMember: true,
 };
 
 const Register = () => {
-	const [values, setValues] = useState(initialState);
-	const { loginWithRedirect } = useUserContext();
-	const { user } = useAuth0();
+  const [authDetail, setAuthDetail] = useState<IAuthDetail>(initialState);
 
-	const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  useTitle("Register |");
 
-	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const name = e.target.name;
-		const value = e.target.value;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
 
-		setValues({ ...values, [name]: value });
-	};
+    setAuthDetail({ ...authDetail, [name]: value });
+  };
 
-	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		if (user) {
-			loginWithRedirect();
-			return;
-		}
-		const { email, isMember, name, password } = values;
-		if (!email || !password || (!isMember && !name)) {
-			toast.error("Please fill out all field");
-			return;
-		}
+  const toggleMember = () => {
+    setAuthDetail({ ...authDetail, isMember: !authDetail.isMember });
+  };
 
-		if (isMember) {
-			dispatch(loginUser({ email, password }));
-			return;
-		}
+  const handleLogin = async () => {
+    const { email, password } = authDetail;
 
-		dispatch(registerUser({ password, email, name }));
-	};
+    if (!email || !password) {
+      toast.error("Please fill out all field");
+      return;
+    }
 
-	const toggleMember = () => {
-		setValues({ ...values, isMember: !values.isMember });
-	};
+    try {
+      const sessionStorageData = await login(authDetail);
+      sessionStorageData.accessToken
+        ? (navigate("/"), toast.success(`Welcome ${authDetail.email}`))
+        : toast.error(sessionStorageData);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message, {
+          closeButton: true,
+          position: "bottom-center",
+        });
+      }
+    }
+  };
 
-	return (
-		<main className={styles.wrapper}>
-			<form onSubmit={onSubmit}>
-				<LogoText />
-				<p>Sign up to see photos and videos from your friends</p>
-				{user ? (
-					<img
-						src={user.picture}
-						alt="avatar"
-						className={styles.userAvatar}
-					/>
-				) : (
-					<div>
-						{!values.isMember && (
-							<input
-								name="name"
-								type="text"
-								placeholder="Username"
-								onChange={handleChange}
-								value={values.name}
-							/>
-						)}
-						<input
-							name="email"
-							type="email"
-							placeholder="Email"
-							onChange={handleChange}
-							value={values.email}
-						/>
-						<input
-							name="password"
-							type="password"
-							placeholder="Password"
-							onChange={handleChange}
-							value={values.password}
-						/>
-					</div>
-				)}
-				{/* <Button type="submit" variant="primary">
-					{values.isMember ? "Log in" : "Sign Up"}
-				</Button> */}
-				<Button type="submit" variant="primary">
-					{/* {values.isMember ? "Log in" : "Sign Up"} */}
-					{user && `Continue as ${user.nickname}`}
-				</Button>
+  const handleRegister = async () => {
+    const { email, isMember, name, password } = authDetail;
 
-				<p className={styles.toggleMemberBtn}>
-					{!values.isMember
-						? "Have an account?"
-						: "Don't have an account?"}
-					<button type="button" onClick={toggleMember}>
-						{!values.isMember ? `Log in ` : "Sign up"}
-					</button>
-				</p>
-			</form>
-		</main>
-	);
+    if (!email || !password || (!isMember && !name)) {
+      toast.error("Please fill out all field");
+      return;
+    }
+
+    try {
+      const sessionStorageData = await register(authDetail);
+      sessionStorageData.accessToken
+        ? (navigate("/"), toast.success(`Welcome ${authDetail.email}`))
+        : toast.error(sessionStorageData);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message, {
+          closeButton: true,
+          position: "bottom-center",
+        });
+      }
+    }
+  };
+
+  const handleLoginGuest = async () => {
+    try {
+      const { VITE_GUEST_LOGIN, VITE_GUEST_PASSWORD } = import.meta.env;
+
+      const guestDetail = {
+        email: VITE_GUEST_LOGIN,
+        password: VITE_GUEST_PASSWORD,
+        name: "Ion",
+        isMember: false,
+      };
+
+      const sessionStorageData = await login(guestDetail);
+
+      sessionStorageData.accessToken
+        ? (navigate("/"),
+          toast.success(`Welcome ${guestDetail.name}`, { theme: "colored" }))
+        : toast.error(sessionStorageData);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message, {
+          closeButton: true,
+          position: "bottom-center",
+        });
+      }
+    }
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    authDetail.isMember ? handleLogin() : handleRegister();
+  };
+
+  return (
+    <main className={styles.wrapper}>
+      <form onSubmit={handleSubmit}>
+        <LogoText />
+        <p>Sign up to see photos and videos from your friends</p>
+        <div>
+          {!authDetail.isMember && (
+            <input
+              name="name"
+              type="text"
+              placeholder="Ion"
+              onChange={handleChange}
+              value={authDetail.name}
+            />
+          )}
+          <input
+            name="email"
+            type="email"
+            placeholder="Ion@example.com"
+            onChange={handleChange}
+            value={authDetail.email}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={handleChange}
+            value={authDetail.password}
+          />
+        </div>
+        <Button type="submit" variant="primary">
+          {authDetail.isMember ? "Log in" : "Sign Up"}
+        </Button>
+
+        <p className={styles.toggleMemberBtn}>
+          {!authDetail.isMember ? "Have an account?" : "Don't have an account?"}
+          <button type="button" onClick={toggleMember}>
+            {!authDetail.isMember ? `Log in ` : "Sign up"}
+          </button>
+        </p>
+      </form>
+      <p className={styles.guestBtn}>
+        <Button variant="secondary" onClick={handleLoginGuest}>
+          Login as Guest
+        </Button>
+      </p>
+    </main>
+  );
 };
 
 export default Register;

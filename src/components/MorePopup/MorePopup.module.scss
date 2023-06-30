@@ -1,62 +1,70 @@
 .morePopup {
-    position: relative;
-    bottom: 1rem;
-    right: 10px;
-    width: 125%;
-    background-color: #252525;
-    border-radius: 8px;
-    z-index: 500;
+  position: relative;
+  bottom: 1rem;
+  right: 10px;
+  width: 125%;
+  background-color: #252525;
+  border-radius: 8px;
+  z-index: 500;
 
-    .wrapper {
-        ul {
-            display: flex;
-            flex-direction: column;
+  .wrapper {
+    ul {
+      display: flex;
+      flex-direction: column;
 
-            li {
-                display: flex;
-                justify-content: space-between;
-                padding: 11px 15px;
-                cursor: pointer;
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 11px 15px;
+        cursor: pointer;
 
-                &:hover {
-                    background-color: #3d3d3d;
+        &:hover {
+          background-color: #3d3d3d;
 
-                    &:last-child {
-                        border-bottom-right-radius: 8px;
-                        border-bottom-left-radius: 8px;
-                    }
+          &:last-child {
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+          }
 
-                    &:first-child {
-                        border-top-right-radius: 8px;
-                        border-top-left-radius: 8px;
-                    }
-                }
-            }
+          &:first-child {
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+          }
         }
-
-        span {
-            font-size: 1.6rem;
-        }
-
-        svg {
-            font-size: 23px;
-        }
+      }
     }
+
+    span {
+      font-size: 1.6rem;
+    }
+
+    svg {
+      font-size: 23px;
+    }
+  }
 }
 .fadeEnter {
-    opacity: 0;
+  opacity: 0;
 }
 
 .fadeEnterActive {
-    opacity: 1;
-    transition: opacity 300ms;
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 .fadeExit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fadeExitActive {
-    opacity: 0;
-    transition: opacity 300ms;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+@media (width < 1260px) {
+  .morePopup {
+    bottom: -60px;
+    left: 50px;
+    width: 300px;
+  }
 }

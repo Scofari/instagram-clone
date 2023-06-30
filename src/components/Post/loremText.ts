@@ -1,4 +1,4 @@
-export const text = `
+export const loremText = `
 	Lorem ipsum dolor sit amet consectetur adipisicing elit.
 	Consequatur, quam provident totam id nam cumque! Odio maxime
 	sequi deleniti similique ipsam illum temporibus hic minima,

@@ -22,12 +22,16 @@ import Search from "./Search";
 import SearchInput from "./SearchInput";
 import Share from "./Share";
 import Sidebar from "./Sidebar";
-import SuggestedFollower from "./SuggestedFollower";
+import {
+	SuggestedFollower,
+	suggestedFollowerSkeleton,
+} from "./SuggestedFollower";
 import SuggestedFollowers from "./SuggestedFollowers";
 import SwitchAccounts from "./SwitchAccounts";
 import SuggestedFollowersFooter from "./SuggestedFollowersFooter";
 import Chat from "./Chat";
 import MessageHeader from "./MessageHeader";
+import ExpandableText from "./ExpandableText/ExpandableText";
 
 export {
 	Chat,
@@ -56,8 +60,10 @@ export {
 	Share,
 	Sidebar,
 	SuggestedFollower,
+	suggestedFollowerSkeleton,
 	SuggestedFollowers,
 	SwitchAccounts,
 	SuggestedFollowersFooter,
 	MessageHeader,
+	ExpandableText,
 };

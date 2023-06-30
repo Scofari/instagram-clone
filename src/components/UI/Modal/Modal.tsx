@@ -1,5 +1,5 @@
-import { createPortal } from "react-dom";
 import { FC, ReactNode, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Tooltip from "./../Tooltip";
 import styles from "./Modal.module.scss";
 
@@ -34,12 +34,16 @@ const Modal: FC<ModalProps> = ({
 
 	return createPortal(
 		<div className={styles.overlay} onClick={() => setOpenModal(false)}>
-			<span
-				className={styles.mainClose}
-				onClick={() => setOpenModal(false)}
-			>
-				{!isDefaultClose && <Tooltip content="Close">&times;</Tooltip>}
-			</span>
+			{!isDefaultClose && (
+				<Tooltip content="Close">
+					<span
+						className={styles.mainClose}
+						onClick={() => setOpenModal(false)}
+					>
+						&times;
+					</span>
+				</Tooltip>
+			)}
 			<div
 				className={`${styles.modal} ${
 					background === "black" ? styles.blackBackground : ""
@@ -52,14 +56,16 @@ const Modal: FC<ModalProps> = ({
 					</div>
 				)}
 				{isDefaultClose && (
-					<span
-						className={`${styles.close} ${
-							isDefaultClose ? styles.defaultClose : ""
-						}`}
-						onClick={() => setOpenModal(false)}
-					>
-						<Tooltip content="Close">&times;</Tooltip>
-					</span>
+					<Tooltip content="Close">
+						<span
+							className={`${styles.close} ${
+								isDefaultClose ? styles.defaultClose : ""
+							}`}
+							onClick={() => setOpenModal(false)}
+						>
+							&times;
+						</span>
+					</Tooltip>
 				)}
 				{children}
 			</div>

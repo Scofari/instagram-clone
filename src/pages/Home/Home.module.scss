@@ -1,9 +1,17 @@
 .home {
-	min-height: 100vh;
+  min-height: 100vh;
+  .container {
+    display: flex;
+    gap: 150px;
+  }
+}
 
-	.container {
-		display: flex;
-		justify-content: center;
-		gap: 13rem;
-	}
+@media (width < 1260px) {
+  .home {
+    min-height: 100vh;
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+  }
 }

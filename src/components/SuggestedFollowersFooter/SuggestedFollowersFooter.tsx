@@ -1,6 +1,6 @@
 import { FC } from "react";
-import data from "./data";
 import styles from "./SuggestedFollowersFooter.module.scss";
+import data from "./data";
 
 const SuggestedFollowersFooter: FC = () => {
 	return (

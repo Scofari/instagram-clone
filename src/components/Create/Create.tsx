@@ -4,6 +4,7 @@ import { InputFile, Modal } from "../../components/UI";
 import { NavigationItem } from "../../components";
 import SVGMedia from "./SVGMedia";
 import styles from "./Create.module.scss";
+import { useTitle } from "../../hooks/useTitle";
 
 const Create: FC = () => {
 	const [openModal, setOpenModal] = useState(false);
