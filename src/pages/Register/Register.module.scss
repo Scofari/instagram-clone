@@ -1,68 +1,62 @@
 .wrapper {
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 
-  form {
-    padding: 2rem 5rem;
-    text-align: center;
-    width: 40rem;
-    border: 1px solid rgba($color: #fff, $alpha: 0.3);
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    form {
+        padding: 2rem 5rem;
+        text-align: center;
+        width: 40rem;
+        border: 1px solid rgba($color: #fff, $alpha: 0.3);
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+        input {
+            height: 4rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            outline: none;
+            border: transparent;
+            background: transparent;
+            color: white;
+            border: 1px solid rgba($color: #fff, $alpha: 0.4);
 
-      input {
-        height: 4rem;
-        padding: 0.5rem;
-        border-radius: 5px;
-        outline: none;
-        border: transparent;
-        background: transparent;
-        color: white;
-        border: 1px solid rgba($color: #fff, $alpha: 0.4);
-
-        &:focus {
-          border: 1px solid rgba($color: #fff, $alpha: 0.7);
+            &:focus {
+                border: 1px solid rgba($color: #fff, $alpha: 0.7);
+            }
+            &::placeholder {
+                color: rgba($color: #fff, $alpha: 0.7);
+            }
         }
-        &::placeholder {
-          color: rgba($color: #fff, $alpha: 0.7);
+        button {
+            width: 100%;
+            margin: 1rem 0;
         }
-      }
-    }
-    button {
-      width: 100%;
-      margin: 1rem 0;
+
+        p {
+            font-size: 1.5rem;
+            margin-top: -2rem;
+            button {
+                width: fit-content;
+                border: none;
+                background: transparent;
+                color: #5fa5ff;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+        }
+
+        .userAvatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
     }
 
-    p {
-      font-size: 1.5rem;
-      margin-top: -2rem;
-      button {
-        width: fit-content;
-        border: none;
-        background: transparent;
-        color: #5fa5ff;
-        cursor: pointer;
-        padding: 0.5rem;
-      }
+    .guestBtn {
+        margin-top: 20px;
     }
-
-    .userAvatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-  .guestBtn {
-    margin-top: 20px;
-  }
 }

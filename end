@@ -1,0 +1,35 @@
+[33m036954c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Implement register functionality
+[33m08ed7f6[m add MessageHeader
+[33m56d4ce3[m corrected import/export of components
+[33m10630ca[m features/added auth0 library
+[33m976647d[m bugfix/show more comment button
+[33m2e75617[m bugfix/trying to add delete funcionality
+[33ma0b3f73[m features/comment functionality and localStorage
+[33meff0a20[m features/close modal on esc and added tabs
+[33m888a5e0[m features/options modal
+[33m96411cf[m features/comment resize
+[33m4d3e702[m feature/_
+[33m539de52[m bugfix/PostModal & refactoring  db.json
+[33m3b5aa63[m bugfix/ProfilePopup
+[33m4c0e4b6[m bugfix/PostModal & ProfileContent & refactoring db.json
+[33mddf4a7d[m bugfix/added animations
+[33me62815e[m features/notification and input component
+[33m197e29f[m bugfix/ added transition for sidebar
+[33m3e2a3db[m features/preloader and refactoring search component
+[33m4eeafd1[m bugfix/ search and hook useClickOutside
+[33m3016b6a[m bugfix/input elements and refactoring userList component
+[33mbbe06bf[m bugfix/fixed profile and refactored db.json
+[33mef93090[m features/react query devtools
+[33m73d623e[m added redux toolkit
+[33m90a7c4e[m fix db.sjon
+[33m3a904a0[m comment
+[33mcde7952[m profile popup
+[33ma37cc1b[m add profile popup
+[33m8b20654[m fix modal component
+[33m0b83fc7[m add context
+[33maf605f4[m added createPortal and highlight modal
+[33m4ae5a0f[m added routing and ProfileContent
+[33m31e902a[m added react-query
+[33mdcf1f9a[m features/profile
+[33mf2bbf87[m features/profile
+[33me45e3b1[m first commit

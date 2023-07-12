@@ -7,25 +7,25 @@ import { useAppDispatch } from "./redux/store";
 import AllRoutes from "./routes/AllRoutes";
 
 const App: FC = () => {
-  const { data: currentUser, isLoading, error } = useCurrentUser();
+    const { data: currentUser, isLoading, error } = useCurrentUser();
 
-  const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (currentUser) {
-      dispatch(setCurrentUser(currentUser));
-    }
-  }, [isLoading]);
+    useEffect(() => {
+        if (currentUser) {
+            dispatch(setCurrentUser(currentUser));
+        }
+    }, [isLoading]);
 
-  if (isLoading || !currentUser) return <InitialLoadingPage />;
+    if (isLoading || !currentUser) return <InitialLoadingPage />;
 
-  if (error) return <p>{error.message}</p>;
+    if (error) return <p>{error.message}</p>;
 
-  return (
-    <>
-      <AllRoutes />
-    </>
-  );
+    return (
+        <>
+            <AllRoutes />
+        </>
+    );
 };
 
 export default App;

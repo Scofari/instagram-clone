@@ -1,0 +1,36 @@
+.comment {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    p {
+        // padding: 0 5px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        span {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    }
+
+    > div {
+        cursor: pointer;
+        margin-left: auto;
+
+        svg {
+            &:hover {
+                stroke: #525252;
+            }
+        }
+    }
+    .heartIcon {
+        fill: red;
+        stroke: red;
+
+        &:hover {
+            fill: red;
+            stroke: red;
+        }
+    }
+}
