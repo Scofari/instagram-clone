@@ -11,9 +11,7 @@ const PostsList: FC = () => {
   return (
     <div className={styles.postsList}>
       {isLoading ? (
-        <>
-          <PostSkeleton />
-        </>
+        <PostSkeleton />
       ) : (
         posts?.map((post: IPost) => (
           <Post {...post} key={post.authorProfile.id} />

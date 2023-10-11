@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import {
   Explore,
@@ -13,7 +12,7 @@ import {
   Register,
 } from "../pages";
 
-export const AppRouter: FC = () => {
+export const AppRouter = () => {
   return (
     <>
       <Routes>
@@ -21,11 +20,9 @@ export const AppRouter: FC = () => {
         <Route
           path="/"
           element={
-            <>
-              <ProtectedRoute>
-                <Layout />
-              </ProtectedRoute>
-            </>
+            <ProtectedRoute>
+              <Layout />
+            </ProtectedRoute>
           }
         >
           <Route index element={<Home />} />
